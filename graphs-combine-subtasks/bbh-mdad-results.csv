@@ -1,0 +1,589 @@
+,Technique,Number of source models,Split,Fraction of sampled points,MDAD,MDAD lower CI,MDAD upper CI
+0,Random (uniform),10,seen,10,0.215,0.14500000000000002,0.285
+1,Random (uniform),10,unseen,10,0.235,0.20499999999999996,0.265
+2,"Random (subtask stratified, equal)",10,seen,10,0.235,0.2,0.26999999999999996
+3,"Random (subtask stratified, equal)",10,unseen,10,0.235,0.205,0.265
+4,Diversity,10,seen,10,0.2,0.18000000000000002,0.22
+5,Diversity,10,unseen,10,0.21,0.18,0.24
+6,Stratified sampling (confidence),10,seen,10,0.19,0.14500000000000002,0.235
+7,Stratified sampling (confidence),10,unseen,10,0.19,0.175,0.20500000000000002
+8,Anchor Points,10,seen,10,0.09,0.075,0.105
+9,Anchor Points,10,unseen,10,0.085,0.07,0.1
+10,tinyBenchmarks,10,seen,10,0.165,0.15,0.18000000000000002
+11,tinyBenchmarks,10,unseen,10,0.155,0.135,0.175
+12,Random (uniform),10,seen,25,0.12,0.10499999999999998,0.135
+13,Random (uniform),10,unseen,25,0.125,0.1,0.15
+14,"Random (subtask stratified, equal)",10,seen,25,0.115,0.105,0.125
+15,"Random (subtask stratified, equal)",10,unseen,25,0.115,0.1,0.13
+16,Diversity,10,seen,25,0.12,0.10999999999999999,0.13
+17,Diversity,10,unseen,25,0.12,0.105,0.135
+18,Stratified sampling (confidence),10,seen,25,0.1,0.085,0.115
+19,Stratified sampling (confidence),10,unseen,25,0.105,0.08499999999999999,0.125
+20,Anchor Points,10,seen,25,0.055,0.039999999999999994,0.07
+21,Anchor Points,10,unseen,25,0.065,0.055,0.07500000000000001
+22,tinyBenchmarks,10,seen,25,0.095,0.075,0.115
+23,tinyBenchmarks,10,unseen,25,0.1,0.09,0.11000000000000001
+24,Random (uniform),10,seen,50,0.085,0.075,0.09500000000000001
+25,Random (uniform),10,unseen,50,0.085,0.075,0.09500000000000001
+26,"Random (subtask stratified, equal)",10,seen,50,0.08,0.075,0.085
+27,"Random (subtask stratified, equal)",10,unseen,50,0.08,0.07,0.09
+28,Diversity,10,seen,50,0.085,0.075,0.09500000000000001
+29,Diversity,10,unseen,50,0.09,0.075,0.105
+30,Stratified sampling (confidence),10,seen,50,0.07,0.055,0.08500000000000002
+31,Stratified sampling (confidence),10,unseen,50,0.065,0.06,0.07
+32,Anchor Points,10,seen,50,0.045,0.039999999999999994,0.05
+33,Anchor Points,10,unseen,50,0.045,0.034999999999999996,0.055
+34,tinyBenchmarks,10,seen,50,0.075,0.06499999999999999,0.085
+35,tinyBenchmarks,10,unseen,50,0.08,0.07,0.09
+36,Random (uniform),10,seen,100,0.055,0.05,0.06
+37,Random (uniform),10,unseen,100,0.055,0.039999999999999994,0.07
+38,"Random (subtask stratified, equal)",10,seen,100,0.05,0.04000000000000001,0.06
+39,"Random (subtask stratified, equal)",10,unseen,100,0.055,0.05,0.06
+40,Diversity,10,seen,100,0.055,0.045,0.065
+41,Diversity,10,unseen,100,0.055,0.045,0.065
+42,Stratified sampling (confidence),10,seen,100,0.05,0.04,0.060000000000000005
+43,Stratified sampling (confidence),10,unseen,100,0.045,0.034999999999999996,0.055
+44,Anchor Points,10,seen,100,0.035,0.035,0.035
+45,Anchor Points,10,unseen,100,0.04,0.035,0.045
+46,tinyBenchmarks,10,seen,100,0.045,0.039999999999999994,0.05
+47,tinyBenchmarks,10,unseen,100,0.055,0.05,0.06
+48,Random (uniform),10,seen,250,0.03,0.024999999999999994,0.035
+49,Random (uniform),10,unseen,250,0.035,0.03,0.04000000000000001
+50,"Random (subtask stratified, equal)",10,seen,250,0.035,0.03,0.04000000000000001
+51,"Random (subtask stratified, equal)",10,unseen,250,0.035,0.03,0.04000000000000001
+52,Diversity,10,seen,250,0.035,0.02500000000000001,0.045
+53,Diversity,10,unseen,250,0.04,0.035,0.045
+54,Stratified sampling (confidence),10,seen,250,0.03,0.03,0.03
+55,Stratified sampling (confidence),10,unseen,250,0.035,0.03,0.04000000000000001
+56,Anchor Points,10,seen,250,0.03,0.024999999999999994,0.035
+57,Anchor Points,10,unseen,250,0.035,0.03,0.04000000000000001
+58,tinyBenchmarks,10,seen,250,0.035,0.03,0.04000000000000001
+59,tinyBenchmarks,10,unseen,250,0.035,0.030000000000000006,0.04
+60,Random (uniform),10,seen,500,0.025,0.02,0.030000000000000002
+61,Random (uniform),10,unseen,500,0.025,0.025,0.025
+62,"Random (subtask stratified, equal)",10,seen,500,0.02,0.02,0.02
+63,"Random (subtask stratified, equal)",10,unseen,500,0.025,0.02,0.030000000000000002
+64,Diversity,10,seen,500,0.03,0.03,0.03
+65,Diversity,10,unseen,500,0.035,0.03,0.04000000000000001
+66,Stratified sampling (confidence),10,seen,500,0.02,0.015,0.025
+67,Stratified sampling (confidence),10,unseen,500,0.025,0.020000000000000004,0.03
+68,Anchor Points,10,seen,500,0.03,0.025,0.034999999999999996
+69,Anchor Points,10,unseen,500,0.03,0.024999999999999994,0.035
+70,tinyBenchmarks,10,seen,500,0.025,0.02,0.030000000000000002
+71,tinyBenchmarks,10,unseen,500,0.03,0.025,0.034999999999999996
+72,Random (uniform),10,seen,1000,0.015,0.015,0.015
+73,Random (uniform),10,unseen,1000,0.02,0.02,0.02
+74,"Random (subtask stratified, equal)",10,seen,1000,0.015,0.01,0.019999999999999997
+75,"Random (subtask stratified, equal)",10,unseen,1000,0.02,0.02,0.02
+76,Diversity,10,seen,1000,0.025,0.02,0.030000000000000002
+77,Diversity,10,unseen,1000,0.025,0.020000000000000004,0.03
+78,Stratified sampling (confidence),10,seen,1000,0.01,0.01,0.01
+79,Stratified sampling (confidence),10,unseen,1000,0.02,0.015,0.025
+80,Anchor Points,10,seen,1000,0.025,0.02,0.030000000000000002
+81,Anchor Points,10,unseen,1000,0.025,0.020000000000000004,0.03
+82,tinyBenchmarks,10,seen,1000,0.015,0.015,0.015
+83,tinyBenchmarks,10,unseen,1000,0.02,0.015,0.025
+84,Random (uniform),50,seen,10,0.22,0.20500000000000002,0.235
+85,Random (uniform),50,unseen,10,0.23,0.2,0.26
+86,"Random (subtask stratified, equal)",50,seen,10,0.19,0.17,0.21
+87,"Random (subtask stratified, equal)",50,unseen,10,0.185,0.15,0.22
+88,Diversity,50,seen,10,0.23,0.195,0.265
+89,Diversity,50,unseen,10,0.225,0.18,0.27
+90,Stratified sampling (confidence),50,seen,10,0.165,0.14,0.19
+91,Stratified sampling (confidence),50,unseen,10,0.18,0.15,0.21
+92,Anchor Points,50,seen,10,0.06,0.05499999999999999,0.065
+93,Anchor Points,50,unseen,10,0.065,0.055,0.07500000000000001
+94,tinyBenchmarks,50,seen,10,0.17,0.15,0.19000000000000003
+95,tinyBenchmarks,50,unseen,10,0.17,0.155,0.18500000000000003
+96,Random (uniform),50,seen,25,0.125,0.11499999999999999,0.135
+97,Random (uniform),50,unseen,25,0.13,0.115,0.14500000000000002
+98,"Random (subtask stratified, equal)",50,seen,25,0.115,0.1,0.13
+99,"Random (subtask stratified, equal)",50,unseen,25,0.12,0.10499999999999998,0.135
+100,Diversity,50,seen,25,0.125,0.1,0.15
+101,Diversity,50,unseen,25,0.13,0.105,0.15500000000000003
+102,Stratified sampling (confidence),50,seen,25,0.1,0.08,0.12000000000000001
+103,Stratified sampling (confidence),50,unseen,25,0.095,0.075,0.115
+104,Anchor Points,50,seen,25,0.055,0.05,0.06
+105,Anchor Points,50,unseen,25,0.055,0.05,0.06
+106,tinyBenchmarks,50,seen,25,0.095,0.085,0.105
+107,tinyBenchmarks,50,unseen,25,0.095,0.085,0.105
+108,Random (uniform),50,seen,50,0.08,0.075,0.085
+109,Random (uniform),50,unseen,50,0.08,0.07,0.09
+110,"Random (subtask stratified, equal)",50,seen,50,0.08,0.07,0.09
+111,"Random (subtask stratified, equal)",50,unseen,50,0.08,0.075,0.085
+112,Diversity,50,seen,50,0.08,0.07,0.09
+113,Diversity,50,unseen,50,0.09,0.075,0.105
+114,Stratified sampling (confidence),50,seen,50,0.07,0.06,0.08000000000000002
+115,Stratified sampling (confidence),50,unseen,50,0.07,0.065,0.07500000000000001
+116,Anchor Points,50,seen,50,0.045,0.04,0.049999999999999996
+117,Anchor Points,50,unseen,50,0.045,0.045,0.045
+118,tinyBenchmarks,50,seen,50,0.06,0.05499999999999999,0.065
+119,tinyBenchmarks,50,unseen,50,0.065,0.065,0.065
+120,Random (uniform),50,seen,100,0.055,0.05,0.06
+121,Random (uniform),50,unseen,100,0.055,0.045,0.065
+122,"Random (subtask stratified, equal)",50,seen,100,0.055,0.045,0.065
+123,"Random (subtask stratified, equal)",50,unseen,100,0.05,0.04000000000000001,0.06
+124,Diversity,50,seen,100,0.06,0.05,0.06999999999999999
+125,Diversity,50,unseen,100,0.055,0.045,0.065
+126,Stratified sampling (confidence),50,seen,100,0.045,0.034999999999999996,0.055
+127,Stratified sampling (confidence),50,unseen,100,0.045,0.03,0.06
+128,Anchor Points,50,seen,100,0.035,0.035,0.035
+129,Anchor Points,50,unseen,100,0.04,0.03,0.05
+130,tinyBenchmarks,50,seen,100,0.04,0.035,0.045
+131,tinyBenchmarks,50,unseen,100,0.045,0.039999999999999994,0.05
+132,Random (uniform),50,seen,250,0.035,0.03,0.04000000000000001
+133,Random (uniform),50,unseen,250,0.035,0.03,0.04000000000000001
+134,"Random (subtask stratified, equal)",50,seen,250,0.03,0.024999999999999994,0.035
+135,"Random (subtask stratified, equal)",50,unseen,250,0.04,0.03,0.05
+136,Diversity,50,seen,250,0.035,0.02500000000000001,0.045
+137,Diversity,50,unseen,250,0.04,0.035,0.045
+138,Stratified sampling (confidence),50,seen,250,0.03,0.024999999999999994,0.035
+139,Stratified sampling (confidence),50,unseen,250,0.035,0.03,0.04000000000000001
+140,Anchor Points,50,seen,250,0.025,0.015,0.035
+141,Anchor Points,50,unseen,250,0.03,0.024999999999999994,0.035
+142,tinyBenchmarks,50,seen,250,0.025,0.020000000000000004,0.03
+143,tinyBenchmarks,50,unseen,250,0.03,0.025,0.034999999999999996
+144,Random (uniform),50,seen,500,0.02,0.015,0.025
+145,Random (uniform),50,unseen,500,0.025,0.020000000000000004,0.03
+146,"Random (subtask stratified, equal)",50,seen,500,0.02,0.02,0.02
+147,"Random (subtask stratified, equal)",50,unseen,500,0.025,0.02,0.030000000000000002
+148,Diversity,50,seen,500,0.03,0.025,0.034999999999999996
+149,Diversity,50,unseen,500,0.03,0.024999999999999994,0.035
+150,Stratified sampling (confidence),50,seen,500,0.02,0.015,0.025
+151,Stratified sampling (confidence),50,unseen,500,0.025,0.025,0.025
+152,Anchor Points,50,seen,500,0.025,0.020000000000000004,0.03
+153,Anchor Points,50,unseen,500,0.03,0.025,0.034999999999999996
+154,tinyBenchmarks,50,seen,500,0.02,0.02,0.02
+155,tinyBenchmarks,50,unseen,500,0.025,0.02,0.030000000000000002
+156,Random (uniform),50,seen,1000,0.015,0.01,0.019999999999999997
+157,Random (uniform),50,unseen,1000,0.02,0.02,0.02
+158,"Random (subtask stratified, equal)",50,seen,1000,0.015,0.01,0.019999999999999997
+159,"Random (subtask stratified, equal)",50,unseen,1000,0.02,0.02,0.02
+160,Diversity,50,seen,1000,0.02,0.02,0.02
+161,Diversity,50,unseen,1000,0.025,0.025,0.025
+162,Stratified sampling (confidence),50,seen,1000,0.015,0.01,0.019999999999999997
+163,Stratified sampling (confidence),50,unseen,1000,0.02,0.015,0.025
+164,Anchor Points,50,seen,1000,0.025,0.02,0.030000000000000002
+165,Anchor Points,50,unseen,1000,0.03,0.025,0.034999999999999996
+166,tinyBenchmarks,50,seen,1000,0.01,0.005000000000000001,0.015
+167,tinyBenchmarks,50,unseen,1000,0.02,0.02,0.02
+168,Random (uniform),100,seen,10,0.215,0.2,0.22999999999999998
+169,Random (uniform),100,unseen,10,0.225,0.195,0.255
+170,"Random (subtask stratified, equal)",100,seen,10,0.225,0.205,0.24500000000000002
+171,"Random (subtask stratified, equal)",100,unseen,10,0.225,0.19,0.26
+172,Diversity,100,seen,10,0.195,0.17,0.22
+173,Diversity,100,unseen,10,0.205,0.19,0.21999999999999997
+174,Stratified sampling (confidence),100,seen,10,0.155,0.13,0.18
+175,Stratified sampling (confidence),100,unseen,10,0.15,0.12999999999999998,0.17
+176,Anchor Points,100,seen,10,0.065,0.055,0.07500000000000001
+177,Anchor Points,100,unseen,10,0.065,0.06,0.07
+178,tinyBenchmarks,100,seen,10,0.155,0.13,0.18
+179,tinyBenchmarks,100,unseen,10,0.16,0.14,0.18
+180,Random (uniform),100,seen,25,0.115,0.095,0.135
+181,Random (uniform),100,unseen,25,0.13,0.12,0.14
+182,"Random (subtask stratified, equal)",100,seen,25,0.115,0.095,0.135
+183,"Random (subtask stratified, equal)",100,unseen,25,0.115,0.1,0.13
+184,Diversity,100,seen,25,0.13,0.11000000000000001,0.15
+185,Diversity,100,unseen,25,0.14,0.13,0.15000000000000002
+186,Stratified sampling (confidence),100,seen,25,0.105,0.09,0.12
+187,Stratified sampling (confidence),100,unseen,25,0.1,0.09,0.11000000000000001
+188,Anchor Points,100,seen,25,0.05,0.05,0.05
+189,Anchor Points,100,unseen,25,0.055,0.05,0.06
+190,tinyBenchmarks,100,seen,25,0.085,0.07,0.1
+191,tinyBenchmarks,100,unseen,25,0.095,0.075,0.115
+192,Random (uniform),100,seen,50,0.08,0.075,0.085
+193,Random (uniform),100,unseen,50,0.08,0.075,0.085
+194,"Random (subtask stratified, equal)",100,seen,50,0.085,0.075,0.09500000000000001
+195,"Random (subtask stratified, equal)",100,unseen,50,0.085,0.08,0.09000000000000001
+196,Diversity,100,seen,50,0.09,0.075,0.105
+197,Diversity,100,unseen,50,0.085,0.07500000000000001,0.095
+198,Stratified sampling (confidence),100,seen,50,0.065,0.06,0.07
+199,Stratified sampling (confidence),100,unseen,50,0.075,0.06,0.09
+200,Anchor Points,100,seen,50,0.035,0.030000000000000006,0.04
+201,Anchor Points,100,unseen,50,0.04,0.035,0.045
+202,tinyBenchmarks,100,seen,50,0.06,0.06,0.06
+203,tinyBenchmarks,100,unseen,50,0.06,0.05,0.06999999999999999
+204,Random (uniform),100,seen,100,0.05,0.045,0.05500000000000001
+205,Random (uniform),100,unseen,100,0.055,0.05,0.06
+206,"Random (subtask stratified, equal)",100,seen,100,0.055,0.05,0.06
+207,"Random (subtask stratified, equal)",100,unseen,100,0.055,0.045,0.065
+208,Diversity,100,seen,100,0.065,0.05,0.08
+209,Diversity,100,unseen,100,0.065,0.06,0.07
+210,Stratified sampling (confidence),100,seen,100,0.045,0.039999999999999994,0.05
+211,Stratified sampling (confidence),100,unseen,100,0.045,0.034999999999999996,0.055
+212,Anchor Points,100,seen,100,0.03,0.024999999999999994,0.035
+213,Anchor Points,100,unseen,100,0.03,0.024999999999999994,0.035
+214,tinyBenchmarks,100,seen,100,0.04,0.035,0.045
+215,tinyBenchmarks,100,unseen,100,0.045,0.039999999999999994,0.05
+216,Random (uniform),100,seen,250,0.03,0.024999999999999994,0.035
+217,Random (uniform),100,unseen,250,0.035,0.03,0.04000000000000001
+218,"Random (subtask stratified, equal)",100,seen,250,0.035,0.03,0.04000000000000001
+219,"Random (subtask stratified, equal)",100,unseen,250,0.035,0.03,0.04000000000000001
+220,Diversity,100,seen,250,0.04,0.03,0.05
+221,Diversity,100,unseen,250,0.04,0.035,0.045
+222,Stratified sampling (confidence),100,seen,250,0.025,0.020000000000000004,0.03
+223,Stratified sampling (confidence),100,unseen,250,0.035,0.03,0.04000000000000001
+224,Anchor Points,100,seen,250,0.025,0.020000000000000004,0.03
+225,Anchor Points,100,unseen,250,0.03,0.025,0.034999999999999996
+226,tinyBenchmarks,100,seen,250,0.025,0.020000000000000004,0.03
+227,tinyBenchmarks,100,unseen,250,0.03,0.024999999999999994,0.035
+228,Random (uniform),100,seen,500,0.02,0.02,0.02
+229,Random (uniform),100,unseen,500,0.025,0.020000000000000004,0.03
+230,"Random (subtask stratified, equal)",100,seen,500,0.02,0.015,0.025
+231,"Random (subtask stratified, equal)",100,unseen,500,0.025,0.020000000000000004,0.03
+232,Diversity,100,seen,500,0.03,0.024999999999999994,0.035
+233,Diversity,100,unseen,500,0.035,0.03,0.04000000000000001
+234,Stratified sampling (confidence),100,seen,500,0.02,0.02,0.02
+235,Stratified sampling (confidence),100,unseen,500,0.025,0.02,0.030000000000000002
+236,Anchor Points,100,seen,500,0.025,0.02,0.030000000000000002
+237,Anchor Points,100,unseen,500,0.03,0.025,0.034999999999999996
+238,tinyBenchmarks,100,seen,500,0.02,0.015,0.025
+239,tinyBenchmarks,100,unseen,500,0.02,0.015,0.025
+240,Random (uniform),100,seen,1000,0.015,0.01,0.019999999999999997
+241,Random (uniform),100,unseen,1000,0.02,0.015,0.025
+242,"Random (subtask stratified, equal)",100,seen,1000,0.015,0.015,0.015
+243,"Random (subtask stratified, equal)",100,unseen,1000,0.02,0.02,0.02
+244,Diversity,100,seen,1000,0.02,0.015,0.025
+245,Diversity,100,unseen,1000,0.025,0.020000000000000004,0.03
+246,Stratified sampling (confidence),100,seen,1000,0.01,0.005000000000000001,0.015
+247,Stratified sampling (confidence),100,unseen,1000,0.02,0.015,0.025
+248,Anchor Points,100,seen,1000,0.025,0.02,0.030000000000000002
+249,Anchor Points,100,unseen,1000,0.025,0.02,0.030000000000000002
+250,tinyBenchmarks,100,seen,1000,0.01,0.005000000000000001,0.015
+251,tinyBenchmarks,100,unseen,1000,0.015,0.009999999999999998,0.02
+252,Random (uniform),150,seen,10,0.22,0.19,0.25
+253,Random (uniform),150,unseen,10,0.2,0.17500000000000002,0.225
+254,"Random (subtask stratified, equal)",150,seen,10,0.205,0.185,0.22499999999999998
+255,"Random (subtask stratified, equal)",150,unseen,10,0.21,0.2,0.21999999999999997
+256,Diversity,150,seen,10,0.2,0.175,0.22500000000000003
+257,Diversity,150,unseen,10,0.205,0.18,0.22999999999999998
+258,Stratified sampling (confidence),150,seen,10,0.185,0.15,0.22
+259,Stratified sampling (confidence),150,unseen,10,0.18,0.16499999999999998,0.195
+260,Anchor Points,150,seen,10,0.055,0.035,0.075
+261,Anchor Points,150,unseen,10,0.065,0.055,0.07500000000000001
+262,tinyBenchmarks,150,seen,10,0.165,0.14500000000000002,0.185
+263,tinyBenchmarks,150,unseen,10,0.16,0.14500000000000002,0.175
+264,Random (uniform),150,seen,25,0.12,0.11499999999999999,0.125
+265,Random (uniform),150,unseen,25,0.13,0.115,0.14500000000000002
+266,"Random (subtask stratified, equal)",150,seen,25,0.125,0.105,0.14500000000000002
+267,"Random (subtask stratified, equal)",150,unseen,25,0.13,0.105,0.15500000000000003
+268,Diversity,150,seen,25,0.13,0.10500000000000001,0.155
+269,Diversity,150,unseen,25,0.125,0.10999999999999999,0.14
+270,Stratified sampling (confidence),150,seen,25,0.09,0.06999999999999999,0.11
+271,Stratified sampling (confidence),150,unseen,25,0.09,0.075,0.105
+272,Anchor Points,150,seen,25,0.05,0.04,0.060000000000000005
+273,Anchor Points,150,unseen,25,0.05,0.04,0.060000000000000005
+274,tinyBenchmarks,150,seen,25,0.09,0.075,0.105
+275,tinyBenchmarks,150,unseen,25,0.095,0.085,0.105
+276,Random (uniform),150,seen,50,0.085,0.07,0.1
+277,Random (uniform),150,unseen,50,0.085,0.08,0.09000000000000001
+278,"Random (subtask stratified, equal)",150,seen,50,0.075,0.06999999999999999,0.08
+279,"Random (subtask stratified, equal)",150,unseen,50,0.08,0.07,0.09
+280,Diversity,150,seen,50,0.08,0.07,0.09
+281,Diversity,150,unseen,50,0.085,0.07500000000000001,0.095
+282,Stratified sampling (confidence),150,seen,50,0.065,0.05500000000000001,0.075
+283,Stratified sampling (confidence),150,unseen,50,0.07,0.06,0.08000000000000002
+284,Anchor Points,150,seen,50,0.04,0.035,0.045
+285,Anchor Points,150,unseen,50,0.035,0.030000000000000006,0.04
+286,tinyBenchmarks,150,seen,50,0.065,0.055,0.07500000000000001
+287,tinyBenchmarks,150,unseen,50,0.065,0.055,0.07500000000000001
+288,Random (uniform),150,seen,100,0.055,0.045,0.065
+289,Random (uniform),150,unseen,100,0.06,0.05,0.06999999999999999
+290,"Random (subtask stratified, equal)",150,seen,100,0.05,0.045000000000000005,0.055
+291,"Random (subtask stratified, equal)",150,unseen,100,0.055,0.05,0.06
+292,Diversity,150,seen,100,0.06,0.05,0.06999999999999999
+293,Diversity,150,unseen,100,0.065,0.055,0.07500000000000001
+294,Stratified sampling (confidence),150,seen,100,0.05,0.045,0.05500000000000001
+295,Stratified sampling (confidence),150,unseen,100,0.05,0.045,0.05500000000000001
+296,Anchor Points,150,seen,100,0.03,0.024999999999999994,0.035
+297,Anchor Points,150,unseen,100,0.035,0.03,0.04000000000000001
+298,tinyBenchmarks,150,seen,100,0.045,0.04,0.049999999999999996
+299,tinyBenchmarks,150,unseen,100,0.045,0.039999999999999994,0.05
+300,Random (uniform),150,seen,250,0.035,0.03,0.04000000000000001
+301,Random (uniform),150,unseen,250,0.035,0.03,0.04000000000000001
+302,"Random (subtask stratified, equal)",150,seen,250,0.03,0.024999999999999994,0.035
+303,"Random (subtask stratified, equal)",150,unseen,250,0.035,0.025,0.045000000000000005
+304,Diversity,150,seen,250,0.035,0.035,0.035
+305,Diversity,150,unseen,250,0.04,0.035,0.045
+306,Stratified sampling (confidence),150,seen,250,0.025,0.015,0.035
+307,Stratified sampling (confidence),150,unseen,250,0.03,0.024999999999999994,0.035
+308,Anchor Points,150,seen,250,0.025,0.02,0.030000000000000002
+309,Anchor Points,150,unseen,250,0.03,0.024999999999999994,0.035
+310,tinyBenchmarks,150,seen,250,0.025,0.025,0.025
+311,tinyBenchmarks,150,unseen,250,0.03,0.025,0.034999999999999996
+312,Random (uniform),150,seen,500,0.02,0.015,0.025
+313,Random (uniform),150,unseen,500,0.025,0.02,0.030000000000000002
+314,"Random (subtask stratified, equal)",150,seen,500,0.02,0.02,0.02
+315,"Random (subtask stratified, equal)",150,unseen,500,0.025,0.02,0.030000000000000002
+316,Diversity,150,seen,500,0.025,0.020000000000000004,0.03
+317,Diversity,150,unseen,500,0.035,0.025,0.045000000000000005
+318,Stratified sampling (confidence),150,seen,500,0.02,0.02,0.02
+319,Stratified sampling (confidence),150,unseen,500,0.025,0.02,0.030000000000000002
+320,Anchor Points,150,seen,500,0.025,0.02,0.030000000000000002
+321,Anchor Points,150,unseen,500,0.025,0.020000000000000004,0.03
+322,tinyBenchmarks,150,seen,500,0.02,0.02,0.02
+323,tinyBenchmarks,150,unseen,500,0.02,0.015,0.025
+324,Random (uniform),150,seen,1000,0.015,0.01,0.019999999999999997
+325,Random (uniform),150,unseen,1000,0.02,0.015,0.025
+326,"Random (subtask stratified, equal)",150,seen,1000,0.015,0.01,0.019999999999999997
+327,"Random (subtask stratified, equal)",150,unseen,1000,0.02,0.015,0.025
+328,Diversity,150,seen,1000,0.02,0.02,0.02
+329,Diversity,150,unseen,1000,0.025,0.02,0.030000000000000002
+330,Stratified sampling (confidence),150,seen,1000,0.015,0.01,0.019999999999999997
+331,Stratified sampling (confidence),150,unseen,1000,0.02,0.015,0.025
+332,Anchor Points,150,seen,1000,0.02,0.010000000000000002,0.03
+333,Anchor Points,150,unseen,1000,0.03,0.025,0.034999999999999996
+334,tinyBenchmarks,150,seen,1000,0.01,0.005000000000000001,0.015
+335,tinyBenchmarks,150,unseen,1000,0.02,0.02,0.02
+336,Random (uniform),200,seen,10,0.21,0.18999999999999997,0.23
+337,Random (uniform),200,unseen,10,0.215,0.19999999999999998,0.23
+338,"Random (subtask stratified, equal)",200,seen,10,0.22,0.19,0.25
+339,"Random (subtask stratified, equal)",200,unseen,10,0.22,0.2,0.24
+340,Diversity,200,seen,10,0.24,0.21,0.27
+341,Diversity,200,unseen,10,0.25,0.22499999999999998,0.275
+342,Stratified sampling (confidence),200,seen,10,0.165,0.14500000000000002,0.185
+343,Stratified sampling (confidence),200,unseen,10,0.165,0.135,0.195
+344,Anchor Points,200,seen,10,0.06,0.04999999999999999,0.07
+345,Anchor Points,200,unseen,10,0.065,0.055,0.07500000000000001
+346,tinyBenchmarks,200,seen,10,0.165,0.14,0.19
+347,tinyBenchmarks,200,unseen,10,0.17,0.15,0.19000000000000003
+348,Random (uniform),200,seen,25,0.115,0.1,0.13
+349,Random (uniform),200,unseen,25,0.12,0.09999999999999998,0.14
+350,"Random (subtask stratified, equal)",200,seen,25,0.12,0.10499999999999998,0.135
+351,"Random (subtask stratified, equal)",200,unseen,25,0.13,0.11,0.15000000000000002
+352,Diversity,200,seen,25,0.13,0.11000000000000001,0.15
+353,Diversity,200,unseen,25,0.14,0.12,0.16000000000000003
+354,Stratified sampling (confidence),200,seen,25,0.105,0.085,0.12499999999999999
+355,Stratified sampling (confidence),200,unseen,25,0.095,0.09,0.1
+356,Anchor Points,200,seen,25,0.045,0.039999999999999994,0.05
+357,Anchor Points,200,unseen,25,0.045,0.034999999999999996,0.055
+358,tinyBenchmarks,200,seen,25,0.09,0.07999999999999999,0.1
+359,tinyBenchmarks,200,unseen,25,0.095,0.085,0.105
+360,Random (uniform),200,seen,50,0.08,0.075,0.085
+361,Random (uniform),200,unseen,50,0.085,0.075,0.09500000000000001
+362,"Random (subtask stratified, equal)",200,seen,50,0.08,0.065,0.095
+363,"Random (subtask stratified, equal)",200,unseen,50,0.075,0.06499999999999999,0.085
+364,Diversity,200,seen,50,0.085,0.08,0.09000000000000001
+365,Diversity,200,unseen,50,0.085,0.07500000000000001,0.095
+366,Stratified sampling (confidence),200,seen,50,0.07,0.06000000000000001,0.08
+367,Stratified sampling (confidence),200,unseen,50,0.07,0.06,0.08000000000000002
+368,Anchor Points,200,seen,50,0.04,0.035,0.045
+369,Anchor Points,200,unseen,50,0.04,0.035,0.045
+370,tinyBenchmarks,200,seen,50,0.06,0.04999999999999999,0.07
+371,tinyBenchmarks,200,unseen,50,0.065,0.06,0.07
+372,Random (uniform),200,seen,100,0.055,0.045,0.065
+373,Random (uniform),200,unseen,100,0.055,0.05,0.06
+374,"Random (subtask stratified, equal)",200,seen,100,0.055,0.05,0.06
+375,"Random (subtask stratified, equal)",200,unseen,100,0.055,0.045,0.065
+376,Diversity,200,seen,100,0.06,0.05,0.06999999999999999
+377,Diversity,200,unseen,100,0.065,0.055,0.07500000000000001
+378,Stratified sampling (confidence),200,seen,100,0.05,0.045,0.05500000000000001
+379,Stratified sampling (confidence),200,unseen,100,0.05,0.04000000000000001,0.06
+380,Anchor Points,200,seen,100,0.035,0.03,0.04000000000000001
+381,Anchor Points,200,unseen,100,0.035,0.035,0.035
+382,tinyBenchmarks,200,seen,100,0.045,0.04,0.049999999999999996
+383,tinyBenchmarks,200,unseen,100,0.045,0.039999999999999994,0.05
+384,Random (uniform),200,seen,250,0.03,0.025,0.034999999999999996
+385,Random (uniform),200,unseen,250,0.035,0.03,0.04000000000000001
+386,"Random (subtask stratified, equal)",200,seen,250,0.035,0.025,0.045000000000000005
+387,"Random (subtask stratified, equal)",200,unseen,250,0.035,0.035,0.035
+388,Diversity,200,seen,250,0.035,0.030000000000000006,0.04
+389,Diversity,200,unseen,250,0.035,0.030000000000000006,0.04
+390,Stratified sampling (confidence),200,seen,250,0.025,0.020000000000000004,0.03
+391,Stratified sampling (confidence),200,unseen,250,0.03,0.024999999999999994,0.035
+392,Anchor Points,200,seen,250,0.025,0.020000000000000004,0.03
+393,Anchor Points,200,unseen,250,0.03,0.024999999999999994,0.035
+394,tinyBenchmarks,200,seen,250,0.025,0.025,0.025
+395,tinyBenchmarks,200,unseen,250,0.03,0.024999999999999994,0.035
+396,Random (uniform),200,seen,500,0.02,0.015,0.025
+397,Random (uniform),200,unseen,500,0.025,0.020000000000000004,0.03
+398,"Random (subtask stratified, equal)",200,seen,500,0.02,0.015,0.025
+399,"Random (subtask stratified, equal)",200,unseen,500,0.025,0.025,0.025
+400,Diversity,200,seen,500,0.025,0.020000000000000004,0.03
+401,Diversity,200,unseen,500,0.03,0.03,0.03
+402,Stratified sampling (confidence),200,seen,500,0.02,0.015,0.025
+403,Stratified sampling (confidence),200,unseen,500,0.025,0.025,0.025
+404,Anchor Points,200,seen,500,0.025,0.02,0.030000000000000002
+405,Anchor Points,200,unseen,500,0.03,0.024999999999999994,0.035
+406,tinyBenchmarks,200,seen,500,0.02,0.015,0.025
+407,tinyBenchmarks,200,unseen,500,0.025,0.02,0.030000000000000002
+408,Random (uniform),200,seen,1000,0.015,0.01,0.019999999999999997
+409,Random (uniform),200,unseen,1000,0.02,0.02,0.02
+410,"Random (subtask stratified, equal)",200,seen,1000,0.015,0.01,0.019999999999999997
+411,"Random (subtask stratified, equal)",200,unseen,1000,0.02,0.02,0.02
+412,Diversity,200,seen,1000,0.02,0.02,0.02
+413,Diversity,200,unseen,1000,0.025,0.020000000000000004,0.03
+414,Stratified sampling (confidence),200,seen,1000,0.015,0.01,0.019999999999999997
+415,Stratified sampling (confidence),200,unseen,1000,0.02,0.015,0.025
+416,Anchor Points,200,seen,1000,0.025,0.02,0.030000000000000002
+417,Anchor Points,200,unseen,1000,0.03,0.024999999999999994,0.035
+418,tinyBenchmarks,200,seen,1000,0.01,0.005000000000000001,0.015
+419,tinyBenchmarks,200,unseen,1000,0.02,0.02,0.02
+420,Random (uniform),250,seen,10,0.2,0.16500000000000004,0.235
+421,Random (uniform),250,unseen,10,0.21,0.185,0.235
+422,"Random (subtask stratified, equal)",250,seen,10,0.23,0.205,0.255
+423,"Random (subtask stratified, equal)",250,unseen,10,0.23,0.205,0.255
+424,Diversity,250,seen,10,0.205,0.175,0.235
+425,Diversity,250,unseen,10,0.22,0.18,0.26
+426,Stratified sampling (confidence),250,seen,10,0.165,0.14,0.19
+427,Stratified sampling (confidence),250,unseen,10,0.165,0.14,0.19
+428,Anchor Points,250,seen,10,0.06,0.05499999999999999,0.065
+429,Anchor Points,250,unseen,10,0.06,0.05,0.06999999999999999
+430,tinyBenchmarks,250,seen,10,0.16,0.14,0.18
+431,tinyBenchmarks,250,unseen,10,0.16,0.14,0.18
+432,Random (uniform),250,seen,25,0.115,0.1,0.13
+433,Random (uniform),250,unseen,25,0.12,0.105,0.135
+434,"Random (subtask stratified, equal)",250,seen,25,0.115,0.1,0.13
+435,"Random (subtask stratified, equal)",250,unseen,25,0.115,0.095,0.135
+436,Diversity,250,seen,25,0.13,0.11,0.15000000000000002
+437,Diversity,250,unseen,25,0.135,0.12,0.15000000000000002
+438,Stratified sampling (confidence),250,seen,25,0.1,0.08,0.12000000000000001
+439,Stratified sampling (confidence),250,unseen,25,0.1,0.08,0.12000000000000001
+440,Anchor Points,250,seen,25,0.05,0.045,0.05500000000000001
+441,Anchor Points,250,unseen,25,0.045,0.034999999999999996,0.055
+442,tinyBenchmarks,250,seen,25,0.085,0.07,0.1
+443,tinyBenchmarks,250,unseen,25,0.095,0.075,0.115
+444,Random (uniform),250,seen,50,0.075,0.06499999999999999,0.085
+445,Random (uniform),250,unseen,50,0.08,0.075,0.085
+446,"Random (subtask stratified, equal)",250,seen,50,0.075,0.06999999999999999,0.08
+447,"Random (subtask stratified, equal)",250,unseen,50,0.08,0.07,0.09
+448,Diversity,250,seen,50,0.085,0.075,0.09500000000000001
+449,Diversity,250,unseen,50,0.09,0.075,0.105
+450,Stratified sampling (confidence),250,seen,50,0.065,0.055,0.07500000000000001
+451,Stratified sampling (confidence),250,unseen,50,0.065,0.05500000000000001,0.075
+452,Anchor Points,250,seen,50,0.035,0.02500000000000001,0.045
+453,Anchor Points,250,unseen,50,0.035,0.02500000000000001,0.045
+454,tinyBenchmarks,250,seen,50,0.065,0.05500000000000001,0.075
+455,tinyBenchmarks,250,unseen,50,0.07,0.06,0.08000000000000002
+456,Random (uniform),250,seen,100,0.05,0.04,0.060000000000000005
+457,Random (uniform),250,unseen,100,0.055,0.05,0.06
+458,"Random (subtask stratified, equal)",250,seen,100,0.055,0.05,0.06
+459,"Random (subtask stratified, equal)",250,unseen,100,0.06,0.05,0.06999999999999999
+460,Diversity,250,seen,100,0.06,0.05499999999999999,0.065
+461,Diversity,250,unseen,100,0.065,0.05,0.08
+462,Stratified sampling (confidence),250,seen,100,0.055,0.04,0.07
+463,Stratified sampling (confidence),250,unseen,100,0.055,0.045,0.065
+464,Anchor Points,250,seen,100,0.03,0.019999999999999997,0.04
+465,Anchor Points,250,unseen,100,0.03,0.024999999999999994,0.035
+466,tinyBenchmarks,250,seen,100,0.04,0.03,0.05
+467,tinyBenchmarks,250,unseen,100,0.045,0.039999999999999994,0.05
+468,Random (uniform),250,seen,250,0.03,0.03,0.03
+469,Random (uniform),250,unseen,250,0.03,0.024999999999999994,0.035
+470,"Random (subtask stratified, equal)",250,seen,250,0.03,0.024999999999999994,0.035
+471,"Random (subtask stratified, equal)",250,unseen,250,0.035,0.03,0.04000000000000001
+472,Diversity,250,seen,250,0.04,0.035,0.045
+473,Diversity,250,unseen,250,0.045,0.035,0.05499999999999999
+474,Stratified sampling (confidence),250,seen,250,0.03,0.024999999999999994,0.035
+475,Stratified sampling (confidence),250,unseen,250,0.035,0.035,0.035
+476,Anchor Points,250,seen,250,0.025,0.02,0.030000000000000002
+477,Anchor Points,250,unseen,250,0.025,0.020000000000000004,0.03
+478,tinyBenchmarks,250,seen,250,0.025,0.02,0.030000000000000002
+479,tinyBenchmarks,250,unseen,250,0.025,0.020000000000000004,0.03
+480,Random (uniform),250,seen,500,0.02,0.02,0.02
+481,Random (uniform),250,unseen,500,0.025,0.020000000000000004,0.03
+482,"Random (subtask stratified, equal)",250,seen,500,0.02,0.02,0.02
+483,"Random (subtask stratified, equal)",250,unseen,500,0.025,0.025,0.025
+484,Diversity,250,seen,500,0.025,0.020000000000000004,0.03
+485,Diversity,250,unseen,500,0.03,0.024999999999999994,0.035
+486,Stratified sampling (confidence),250,seen,500,0.02,0.02,0.02
+487,Stratified sampling (confidence),250,unseen,500,0.025,0.02,0.030000000000000002
+488,Anchor Points,250,seen,500,0.025,0.02,0.030000000000000002
+489,Anchor Points,250,unseen,500,0.025,0.025,0.025
+490,tinyBenchmarks,250,seen,500,0.02,0.015,0.025
+491,tinyBenchmarks,250,unseen,500,0.025,0.025,0.025
+492,Random (uniform),250,seen,1000,0.015,0.01,0.019999999999999997
+493,Random (uniform),250,unseen,1000,0.02,0.02,0.02
+494,"Random (subtask stratified, equal)",250,seen,1000,0.015,0.015,0.015
+495,"Random (subtask stratified, equal)",250,unseen,1000,0.02,0.02,0.02
+496,Diversity,250,seen,1000,0.02,0.02,0.02
+497,Diversity,250,unseen,1000,0.025,0.02,0.030000000000000002
+498,Stratified sampling (confidence),250,seen,1000,0.01,0.005000000000000001,0.015
+499,Stratified sampling (confidence),250,unseen,1000,0.02,0.02,0.02
+500,Anchor Points,250,seen,1000,0.025,0.02,0.030000000000000002
+501,Anchor Points,250,unseen,1000,0.025,0.025,0.025
+502,tinyBenchmarks,250,seen,1000,0.01,0.005000000000000001,0.015
+503,tinyBenchmarks,250,unseen,1000,0.02,0.015,0.025
+504,Random (uniform),300,seen,10,0.215,0.19,0.24
+505,Random (uniform),300,unseen,10,0.225,0.195,0.255
+506,"Random (subtask stratified, equal)",300,seen,10,0.225,0.19,0.26
+507,"Random (subtask stratified, equal)",300,unseen,10,0.24,0.2,0.27999999999999997
+508,Diversity,300,seen,10,0.185,0.125,0.245
+509,Diversity,300,unseen,10,0.21,0.16999999999999998,0.25
+510,Stratified sampling (confidence),300,seen,10,0.175,0.155,0.19499999999999998
+511,Stratified sampling (confidence),300,unseen,10,0.17,0.155,0.18500000000000003
+512,Anchor Points,300,seen,10,0.06,0.04999999999999999,0.07
+513,Anchor Points,300,unseen,10,0.055,0.045,0.065
+514,tinyBenchmarks,300,seen,10,0.16,0.14,0.18
+515,tinyBenchmarks,300,unseen,10,0.16,0.15,0.17
+516,Random (uniform),300,seen,25,0.12,0.10999999999999999,0.13
+517,Random (uniform),300,unseen,25,0.12,0.10499999999999998,0.135
+518,"Random (subtask stratified, equal)",300,seen,25,0.12,0.11,0.13
+519,"Random (subtask stratified, equal)",300,unseen,25,0.12,0.11499999999999999,0.125
+520,Diversity,300,seen,25,0.125,0.10999999999999999,0.14
+521,Diversity,300,unseen,25,0.135,0.11,0.16000000000000003
+522,Stratified sampling (confidence),300,seen,25,0.1,0.085,0.115
+523,Stratified sampling (confidence),300,unseen,25,0.095,0.08,0.11
+524,Anchor Points,300,seen,25,0.045,0.039999999999999994,0.05
+525,Anchor Points,300,unseen,25,0.045,0.039999999999999994,0.05
+526,tinyBenchmarks,300,seen,25,0.1,0.085,0.115
+527,tinyBenchmarks,300,unseen,25,0.1,0.09,0.11000000000000001
+528,Random (uniform),300,seen,50,0.07,0.05500000000000001,0.085
+529,Random (uniform),300,unseen,50,0.08,0.07,0.09
+530,"Random (subtask stratified, equal)",300,seen,50,0.075,0.06,0.09
+531,"Random (subtask stratified, equal)",300,unseen,50,0.08,0.07,0.09
+532,Diversity,300,seen,50,0.08,0.07,0.09
+533,Diversity,300,unseen,50,0.085,0.08,0.09000000000000001
+534,Stratified sampling (confidence),300,seen,50,0.065,0.06,0.07
+535,Stratified sampling (confidence),300,unseen,50,0.065,0.05500000000000001,0.075
+536,Anchor Points,300,seen,50,0.035,0.02500000000000001,0.045
+537,Anchor Points,300,unseen,50,0.04,0.035,0.045
+538,tinyBenchmarks,300,seen,50,0.065,0.05500000000000001,0.075
+539,tinyBenchmarks,300,unseen,50,0.065,0.05500000000000001,0.075
+540,Random (uniform),300,seen,100,0.055,0.05,0.06
+541,Random (uniform),300,unseen,100,0.055,0.05,0.06
+542,"Random (subtask stratified, equal)",300,seen,100,0.055,0.05,0.06
+543,"Random (subtask stratified, equal)",300,unseen,100,0.055,0.05,0.06
+544,Diversity,300,seen,100,0.055,0.05,0.06
+545,Diversity,300,unseen,100,0.06,0.05,0.06999999999999999
+546,Stratified sampling (confidence),300,seen,100,0.05,0.04,0.060000000000000005
+547,Stratified sampling (confidence),300,unseen,100,0.05,0.045,0.05500000000000001
+548,Anchor Points,300,seen,100,0.035,0.025,0.045000000000000005
+549,Anchor Points,300,unseen,100,0.035,0.03,0.04000000000000001
+550,tinyBenchmarks,300,seen,100,0.04,0.035,0.045
+551,tinyBenchmarks,300,unseen,100,0.045,0.039999999999999994,0.05
+552,Random (uniform),300,seen,250,0.03,0.024999999999999994,0.035
+553,Random (uniform),300,unseen,250,0.035,0.03,0.04000000000000001
+554,"Random (subtask stratified, equal)",300,seen,250,0.03,0.03,0.03
+555,"Random (subtask stratified, equal)",300,unseen,250,0.035,0.03,0.04000000000000001
+556,Diversity,300,seen,250,0.035,0.03,0.04000000000000001
+557,Diversity,300,unseen,250,0.04,0.035,0.045
+558,Stratified sampling (confidence),300,seen,250,0.03,0.024999999999999994,0.035
+559,Stratified sampling (confidence),300,unseen,250,0.03,0.024999999999999994,0.035
+560,Anchor Points,300,seen,250,0.025,0.02,0.030000000000000002
+561,Anchor Points,300,unseen,250,0.03,0.024999999999999994,0.035
+562,tinyBenchmarks,300,seen,250,0.025,0.025,0.025
+563,tinyBenchmarks,300,unseen,250,0.03,0.025,0.034999999999999996
+564,Random (uniform),300,seen,500,0.02,0.02,0.02
+565,Random (uniform),300,unseen,500,0.025,0.02,0.030000000000000002
+566,"Random (subtask stratified, equal)",300,seen,500,0.02,0.015,0.025
+567,"Random (subtask stratified, equal)",300,unseen,500,0.025,0.020000000000000004,0.03
+568,Diversity,300,seen,500,0.025,0.020000000000000004,0.03
+569,Diversity,300,unseen,500,0.03,0.024999999999999994,0.035
+570,Stratified sampling (confidence),300,seen,500,0.02,0.015,0.025
+571,Stratified sampling (confidence),300,unseen,500,0.025,0.02,0.030000000000000002
+572,Anchor Points,300,seen,500,0.025,0.015,0.035
+573,Anchor Points,300,unseen,500,0.025,0.015,0.035
+574,tinyBenchmarks,300,seen,500,0.015,0.009999999999999998,0.02
+575,tinyBenchmarks,300,unseen,500,0.025,0.02,0.030000000000000002
+576,Random (uniform),300,seen,1000,0.015,0.01,0.019999999999999997
+577,Random (uniform),300,unseen,1000,0.02,0.02,0.02
+578,"Random (subtask stratified, equal)",300,seen,1000,0.015,0.01,0.019999999999999997
+579,"Random (subtask stratified, equal)",300,unseen,1000,0.02,0.02,0.02
+580,Diversity,300,seen,1000,0.02,0.015,0.025
+581,Diversity,300,unseen,1000,0.025,0.025,0.025
+582,Stratified sampling (confidence),300,seen,1000,0.01,0.005000000000000001,0.015
+583,Stratified sampling (confidence),300,unseen,1000,0.02,0.015,0.025
+584,Anchor Points,300,seen,1000,0.025,0.02,0.030000000000000002
+585,Anchor Points,300,unseen,1000,0.025,0.020000000000000004,0.03
+586,tinyBenchmarks,300,seen,1000,0.01,0.005000000000000001,0.015
+587,tinyBenchmarks,300,unseen,1000,0.02,0.02,0.02
