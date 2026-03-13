@@ -1,4 +1,4 @@
 open-llm-leaderboard-results-combined
 results-cached
 .*
-notebooks/output
+notebooks/dump
