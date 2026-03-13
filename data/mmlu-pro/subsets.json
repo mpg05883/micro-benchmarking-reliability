@@ -1,0 +1,16 @@
+[
+  "mmlu-pro_philosophy",
+  "mmlu-pro_law",
+  "mmlu-pro_engineering",
+  "mmlu-pro_chemistry",
+  "mmlu-pro_business",
+  "mmlu-pro_psychology",
+  "mmlu-pro_health",
+  "mmlu-pro_biology",
+  "mmlu-pro_history",
+  "mmlu-pro_other",
+  "mmlu-pro_economics",
+  "mmlu-pro_physics",
+  "mmlu-pro_computer science",
+  "mmlu-pro_math"
+]
