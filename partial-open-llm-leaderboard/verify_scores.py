@@ -4,7 +4,12 @@ Verify that local per-instance model scores in partial-open-llm-leaderboard/data
 match the authoritative scores on the Hugging Face Open LLM Leaderboard.
 
 For each benchmark a random sample of models is chosen, and their per-instance
-scores are compared against the HuggingFace source row-by-row.
+scores are compared against the HuggingFace source.
+
+HuggingFace model-details repos return questions in evaluation order, which can
+differ from the canonical dataset order used in the local model_scores.csv.
+The comparison aligns rows by sorting the HF data on `doc_id` (the question's
+0-based index in the original task), which matches the canonical order.
 
 Supported benchmarks (v2 leaderboard):
   BBH, GPQA, MMLU-Pro
@@ -82,10 +87,14 @@ def get_subset_col(df: pd.DataFrame) -> str:
     return "scores_subset" if "scores_subset" in df.columns else "subset"
 
 
-def load_hf_config(model: str, config: str) -> pd.Series | None:
+def load_hf_config(model: str, config: str) -> pd.DataFrame | None:
     """
-    Load a HuggingFace dataset config and return the correctness column as a
-    Series (reset index). Returns None on any error.
+    Load a HuggingFace dataset config and return a DataFrame containing at
+    minimum `doc_id` and the first available correctness column.
+    Returns None on any error.
+
+    Rows are sorted by `doc_id` (ascending) so that they align with the
+    canonical dataset order used in the local model_scores.csv.
     """
     repo_id = f"{HF_OWNER}/{model}-details"
     try:
@@ -102,7 +111,12 @@ def load_hf_config(model: str, config: str) -> pd.Series | None:
         )
         return None
 
-    return hf_df[col].reset_index(drop=True)
+    if "doc_id" in hf_df.columns:
+        hf_df = hf_df.sort_values("doc_id").reset_index(drop=True)
+    else:
+        print(f"      [WARN] No doc_id column in {config}; using raw row order.")
+
+    return hf_df[[col]].rename(columns={col: "score"})
 
 
 def compare_scores(local: pd.Series, hf: pd.Series) -> dict:
@@ -238,22 +252,29 @@ def verify_benchmark(
                 print(f"  Loading HF config: {config} …")
                 hf_whole_cache[model] = load_hf_config(model, config)
 
-            hf_all = hf_whole_cache[model]
+            hf_all_df = hf_whole_cache[model]
 
             # Iterate subsets from the enum and compare per local subset slice
             hf_cursor = 0  # track position within the whole HF series
             for subset in benchmark.subsets:
-                local_rows = local_df[local_df[subset_col] == subset][model].reset_index(
-                    drop=True
-                )
+                local_rows = local_df[local_df[subset_col] == subset][
+                    model
+                ].reset_index(drop=True)
                 local_n = len(local_rows)
 
-                if hf_all is None:
+                if hf_all_df is None:
                     row = {
-                        "model": model, "benchmark": str(benchmark), "subset": subset,
-                        "size_mismatch": True, "local_n": local_n, "hf_n": 0,
-                        "n_diff": local_n, "match_rate": 0.0,
-                        "diff_indices": [], "local_vals": [], "hf_vals": [],
+                        "model": model,
+                        "benchmark": str(benchmark),
+                        "subset": subset,
+                        "size_mismatch": True,
+                        "local_n": local_n,
+                        "hf_n": 0,
+                        "n_diff": local_n,
+                        "match_rate": 0.0,
+                        "diff_indices": [],
+                        "local_vals": [],
+                        "hf_vals": [],
                     }
                     print(
                         f"  {model:<43} {subset:<40} {local_n:>6} {'N/A':>6} {'N/A':>5} {'N/A':>7}"
@@ -261,14 +282,24 @@ def verify_benchmark(
                     results.append(row)
                     continue
 
-                hf_slice = hf_all.iloc[hf_cursor: hf_cursor + local_n].reset_index(drop=True)
+                hf_slice = (
+                    hf_all_df["score"]
+                    .iloc[hf_cursor : hf_cursor + local_n]
+                    .reset_index(drop=True)
+                )
                 hf_cursor += local_n
 
                 result = compare_scores(local_rows, hf_slice)
-                result.update({"model": model, "benchmark": str(benchmark), "subset": subset})
+                result.update(
+                    {"model": model, "benchmark": str(benchmark), "subset": subset}
+                )
                 results.append(result)
 
-                match_str = "✓" if result["n_diff"] == 0 and not result["size_mismatch"] else "✗"
+                match_str = (
+                    "✓"
+                    if result["n_diff"] == 0 and not result["size_mismatch"]
+                    else "✗"
+                )
                 print(
                     f"  {model:<43} {subset:<40} {result['local_n']:>6} {match_str:>6}"
                     f" {result['n_diff']:>5} {result['match_rate']:>7.1%}"
@@ -285,21 +316,28 @@ def verify_benchmark(
             strip_prefix = hf_cfg["strip_prefix"]
 
             for subset in benchmark.subsets:
-                local_rows = local_df[local_df[subset_col] == subset][model].reset_index(
-                    drop=True
-                )
+                local_rows = local_df[local_df[subset_col] == subset][
+                    model
+                ].reset_index(drop=True)
                 local_n = len(local_rows)
 
                 hf_subset_suffix = subset.removeprefix(strip_prefix)
                 config = f"{model}__leaderboard_{hf_benchmark}_{hf_subset_suffix}"
-                hf_scores = load_hf_config(model, config)
+                hf_df = load_hf_config(model, config)
 
-                if hf_scores is None:
+                if hf_df is None:
                     row = {
-                        "model": model, "benchmark": str(benchmark), "subset": subset,
-                        "size_mismatch": True, "local_n": local_n, "hf_n": 0,
-                        "n_diff": local_n, "match_rate": 0.0,
-                        "diff_indices": [], "local_vals": [], "hf_vals": [],
+                        "model": model,
+                        "benchmark": str(benchmark),
+                        "subset": subset,
+                        "size_mismatch": True,
+                        "local_n": local_n,
+                        "hf_n": 0,
+                        "n_diff": local_n,
+                        "match_rate": 0.0,
+                        "diff_indices": [],
+                        "local_vals": [],
+                        "hf_vals": [],
                     }
                     print(
                         f"  {model:<43} {subset:<40} {local_n:>6} {'N/A':>6} {'N/A':>5} {'N/A':>7}"
@@ -307,11 +345,17 @@ def verify_benchmark(
                     results.append(row)
                     continue
 
-                result = compare_scores(local_rows, hf_scores)
-                result.update({"model": model, "benchmark": str(benchmark), "subset": subset})
+                result = compare_scores(local_rows, hf_df["score"])
+                result.update(
+                    {"model": model, "benchmark": str(benchmark), "subset": subset}
+                )
                 results.append(result)
 
-                match_str = "✓" if result["n_diff"] == 0 and not result["size_mismatch"] else "✗"
+                match_str = (
+                    "✓"
+                    if result["n_diff"] == 0 and not result["size_mismatch"]
+                    else "✗"
+                )
                 print(
                     f"  {model:<43} {subset:<40} {result['local_n']:>6} {match_str:>6}"
                     f" {result['n_diff']:>5} {result['match_rate']:>7.1%}"
@@ -377,13 +421,17 @@ def main() -> None:
     print("SUMMARY")
     print(f"{'═' * 60}")
 
-    checked = [r for r in all_results if not (r.get("hf_n", 0) == 0 and r.get("size_mismatch"))]
+    checked = [
+        r for r in all_results if not (r.get("hf_n", 0) == 0 and r.get("size_mismatch"))
+    ]
     total = len(checked)
     passed = sum(1 for r in checked if r["n_diff"] == 0 and not r["size_mismatch"])
 
     skipped_bms = [b.pretty_name for b in benchmarks_to_run if BENCHMARK_HF[b] is None]
 
-    skipped_str = f"  Skipped: {', '.join(skipped_bms)} (v1 format)" if skipped_bms else ""
+    skipped_str = (
+        f"  Skipped: {', '.join(skipped_bms)} (v1 format)" if skipped_bms else ""
+    )
     print(f"  Matched: {passed}/{total} subset comparisons")
     if skipped_str:
         print(skipped_str)

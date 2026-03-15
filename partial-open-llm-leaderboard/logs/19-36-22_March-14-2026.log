@@ -1,0 +1,547 @@
+=== Run at 19-36-22 March-14-2026 ===
+
+[MISMATCH] model=google__gemma-2b-it  benchmark=bbh  subset=bbh_boolean_expressions
+  local_n=250  hf_n=250  n_diff=120  match_rate=52.0%
+  differing indices (first 20): [np.int64(1), np.int64(6), np.int64(10), np.int64(12), np.int64(14), np.int64(15), np.int64(16), np.int64(20), np.int64(21), np.int64(22), np.int64(23), np.int64(24), np.int64(26), np.int64(31), np.int64(33), np.int64(34), np.int64(36), np.int64(37), np.int64(38), np.int64(39)]
+  local values at those indices: [1, 0, 0, 1, 1, 1, 0, 0, 1, 1, 1, 0, 1, 1, 0, 1, 1, 0, 0, 0]
+  hf values at those indices:    [0, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 1, 1]
+
+[MISMATCH] model=google__gemma-2b-it  benchmark=bbh  subset=bbh_causal_judgement
+  local_n=187  hf_n=187  n_diff=87  match_rate=53.5%
+  differing indices (first 20): [np.int64(1), np.int64(3), np.int64(4), np.int64(5), np.int64(7), np.int64(8), np.int64(9), np.int64(13), np.int64(14), np.int64(15), np.int64(16), np.int64(17), np.int64(18), np.int64(21), np.int64(22), np.int64(23), np.int64(24), np.int64(25), np.int64(27), np.int64(30)]
+  local values at those indices: [0, 0, 1, 1, 0, 1, 1, 0, 1, 1, 1, 0, 0, 0, 1, 0, 1, 0, 1, 1]
+  hf values at those indices:    [1, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 1, 1, 1, 0, 1, 0, 1, 0, 0]
+
+[MISMATCH] model=google__gemma-2b-it  benchmark=bbh  subset=bbh_date_understanding
+  local_n=250  hf_n=250  n_diff=96  match_rate=61.6%
+  differing indices (first 20): [np.int64(1), np.int64(3), np.int64(6), np.int64(7), np.int64(15), np.int64(16), np.int64(17), np.int64(19), np.int64(24), np.int64(26), np.int64(30), np.int64(38), np.int64(39), np.int64(46), np.int64(51), np.int64(54), np.int64(55), np.int64(56), np.int64(57), np.int64(62)]
+  local values at those indices: [1, 0, 1, 1, 0, 0, 1, 0, 1, 0, 0, 1, 1, 1, 0, 0, 1, 0, 0, 0]
+  hf values at those indices:    [0, 1, 0, 0, 1, 1, 0, 1, 0, 1, 1, 0, 0, 0, 1, 1, 0, 1, 1, 1]
+
+[MISMATCH] model=google__gemma-2b-it  benchmark=bbh  subset=bbh_disambiguation_qa
+  local_n=250  hf_n=250  n_diff=108  match_rate=56.8%
+  differing indices (first 20): [np.int64(3), np.int64(4), np.int64(6), np.int64(7), np.int64(8), np.int64(11), np.int64(12), np.int64(16), np.int64(17), np.int64(19), np.int64(20), np.int64(23), np.int64(24), np.int64(26), np.int64(27), np.int64(29), np.int64(30), np.int64(32), np.int64(34), np.int64(35)]
+  local values at those indices: [0, 0, 1, 1, 0, 1, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 1, 0]
+  hf values at those indices:    [1, 1, 0, 0, 1, 0, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 0, 0, 1]
+
+[MISMATCH] model=google__gemma-2b-it  benchmark=bbh  subset=bbh_formal_fallacies
+  local_n=250  hf_n=250  n_diff=107  match_rate=57.2%
+  differing indices (first 20): [np.int64(1), np.int64(2), np.int64(3), np.int64(4), np.int64(5), np.int64(8), np.int64(10), np.int64(12), np.int64(14), np.int64(15), np.int64(16), np.int64(17), np.int64(21), np.int64(22), np.int64(24), np.int64(25), np.int64(28), np.int64(29), np.int64(30), np.int64(31)]
+  local values at those indices: [0, 1, 0, 0, 0, 1, 0, 0, 1, 1, 0, 1, 0, 0, 1, 1, 0, 0, 1, 1]
+  hf values at those indices:    [1, 0, 1, 1, 1, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 0, 1, 1, 0, 0]
+
+[MISMATCH] model=google__gemma-2b-it  benchmark=bbh  subset=bbh_geometric_shapes
+  local_n=250  hf_n=250  n_diff=56  match_rate=77.6%
+  differing indices (first 20): [np.int64(5), np.int64(7), np.int64(10), np.int64(20), np.int64(23), np.int64(24), np.int64(28), np.int64(30), np.int64(34), np.int64(43), np.int64(45), np.int64(48), np.int64(52), np.int64(60), np.int64(61), np.int64(63), np.int64(65), np.int64(67), np.int64(68), np.int64(74)]
+  local values at those indices: [1, 1, 1, 1, 1, 0, 1, 1, 1, 0, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0]
+  hf values at those indices:    [0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 0, 1, 1, 0, 1, 0, 1, 1]
+
+[MISMATCH] model=google__gemma-2b-it  benchmark=bbh  subset=bbh_hyperbaton
+  local_n=250  hf_n=250  n_diff=118  match_rate=52.8%
+  differing indices (first 20): [np.int64(1), np.int64(4), np.int64(6), np.int64(9), np.int64(14), np.int64(15), np.int64(16), np.int64(17), np.int64(18), np.int64(20), np.int64(21), np.int64(22), np.int64(25), np.int64(26), np.int64(27), np.int64(28), np.int64(29), np.int64(31), np.int64(33), np.int64(34)]
+  local values at those indices: [1, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 1]
+  hf values at those indices:    [0, 1, 0, 1, 1, 1, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1, 0, 0, 0, 0]
+
+[MISMATCH] model=google__gemma-2b-it  benchmark=bbh  subset=bbh_logical_deduction_five_objects
+  local_n=250  hf_n=250  n_diff=68  match_rate=72.8%
+  differing indices (first 20): [np.int64(6), np.int64(10), np.int64(11), np.int64(13), np.int64(14), np.int64(18), np.int64(19), np.int64(22), np.int64(28), np.int64(34), np.int64(46), np.int64(49), np.int64(52), np.int64(56), np.int64(61), np.int64(62), np.int64(67), np.int64(68), np.int64(69), np.int64(70)]
+  local values at those indices: [1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1]
+  hf values at those indices:    [0, 1, 1, 1, 1, 1, 0, 1, 1, 0, 1, 1, 0, 1, 1, 1, 0, 1, 1, 0]
+
+[MISMATCH] model=google__gemma-2b-it  benchmark=bbh  subset=bbh_logical_deduction_seven_objects
+  local_n=250  hf_n=250  n_diff=60  match_rate=76.0%
+  differing indices (first 20): [np.int64(1), np.int64(4), np.int64(5), np.int64(8), np.int64(13), np.int64(14), np.int64(19), np.int64(21), np.int64(27), np.int64(32), np.int64(40), np.int64(41), np.int64(43), np.int64(52), np.int64(53), np.int64(56), np.int64(61), np.int64(67), np.int64(76), np.int64(79)]
+  local values at those indices: [0, 0, 0, 1, 0, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 0]
+  hf values at those indices:    [1, 1, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 1]
+
+[MISMATCH] model=google__gemma-2b-it  benchmark=bbh  subset=bbh_logical_deduction_three_objects
+  local_n=250  hf_n=250  n_diff=118  match_rate=52.8%
+  differing indices (first 20): [np.int64(1), np.int64(3), np.int64(4), np.int64(5), np.int64(6), np.int64(10), np.int64(11), np.int64(12), np.int64(14), np.int64(18), np.int64(27), np.int64(28), np.int64(29), np.int64(30), np.int64(31), np.int64(32), np.int64(35), np.int64(39), np.int64(40), np.int64(43)]
+  local values at those indices: [0, 1, 0, 1, 1, 0, 0, 0, 1, 0, 1, 1, 1, 1, 0, 1, 0, 0, 0, 0]
+  hf values at those indices:    [1, 0, 1, 0, 0, 1, 1, 1, 0, 1, 0, 0, 0, 0, 1, 0, 1, 1, 1, 1]
+
+[MISMATCH] model=google__gemma-2b-it  benchmark=bbh  subset=bbh_movie_recommendation
+  local_n=250  hf_n=250  n_diff=122  match_rate=51.2%
+  differing indices (first 20): [np.int64(1), np.int64(5), np.int64(6), np.int64(8), np.int64(11), np.int64(12), np.int64(13), np.int64(14), np.int64(15), np.int64(16), np.int64(19), np.int64(21), np.int64(22), np.int64(26), np.int64(27), np.int64(28), np.int64(43), np.int64(44), np.int64(45), np.int64(46)]
+  local values at those indices: [1, 0, 0, 0, 1, 0, 0, 1, 1, 0, 1, 1, 0, 0, 1, 0, 0, 0, 0, 0]
+  hf values at those indices:    [0, 1, 1, 1, 0, 1, 1, 0, 0, 1, 0, 0, 1, 1, 0, 1, 1, 1, 1, 1]
+
+[MISMATCH] model=google__gemma-2b-it  benchmark=bbh  subset=bbh_navigate
+  local_n=250  hf_n=250  n_diff=146  match_rate=41.6%
+  differing indices (first 20): [np.int64(2), np.int64(3), np.int64(4), np.int64(8), np.int64(9), np.int64(10), np.int64(11), np.int64(13), np.int64(14), np.int64(15), np.int64(17), np.int64(18), np.int64(20), np.int64(21), np.int64(25), np.int64(26), np.int64(27), np.int64(29), np.int64(30), np.int64(32)]
+  local values at those indices: [0, 1, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 1]
+  hf values at those indices:    [1, 0, 1, 1, 1, 1, 1, 0, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 1, 0]
+
+[MISMATCH] model=google__gemma-2b-it  benchmark=bbh  subset=bbh_object_counting
+  local_n=250  hf_n=250  n_diff=99  match_rate=60.4%
+  differing indices (first 20): [np.int64(2), np.int64(5), np.int64(6), np.int64(8), np.int64(18), np.int64(20), np.int64(21), np.int64(22), np.int64(24), np.int64(25), np.int64(27), np.int64(28), np.int64(34), np.int64(35), np.int64(36), np.int64(37), np.int64(38), np.int64(41), np.int64(44), np.int64(53)]
+  local values at those indices: [1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1, 1, 1, 1]
+  hf values at those indices:    [0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0]
+
+[MISMATCH] model=google__gemma-2b-it  benchmark=bbh  subset=bbh_penguins_in_a_table
+  local_n=146  hf_n=146  n_diff=60  match_rate=58.9%
+  differing indices (first 20): [np.int64(1), np.int64(2), np.int64(4), np.int64(7), np.int64(12), np.int64(15), np.int64(16), np.int64(17), np.int64(18), np.int64(19), np.int64(20), np.int64(21), np.int64(22), np.int64(24), np.int64(25), np.int64(28), np.int64(32), np.int64(37), np.int64(38), np.int64(39)]
+  local values at those indices: [1, 1, 1, 1, 1, 0, 0, 1, 1, 0, 1, 0, 0, 0, 1, 1, 0, 0, 0, 1]
+  hf values at those indices:    [0, 0, 0, 0, 0, 1, 1, 0, 0, 1, 0, 1, 1, 1, 0, 0, 1, 1, 1, 0]
+
+[MISMATCH] model=google__gemma-2b-it  benchmark=bbh  subset=bbh_reasoning_about_colored_objects
+  local_n=250  hf_n=250  n_diff=90  match_rate=64.0%
+  differing indices (first 20): [np.int64(1), np.int64(4), np.int64(5), np.int64(8), np.int64(18), np.int64(19), np.int64(23), np.int64(26), np.int64(28), np.int64(35), np.int64(43), np.int64(45), np.int64(46), np.int64(54), np.int64(55), np.int64(59), np.int64(64), np.int64(65), np.int64(70), np.int64(78)]
+  local values at those indices: [1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+  hf values at those indices:    [0, 1, 1, 1, 1, 1, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+
+[MISMATCH] model=google__gemma-2b-it  benchmark=bbh  subset=bbh_ruin_names
+  local_n=250  hf_n=250  n_diff=36  match_rate=85.6%
+  differing indices (first 20): [np.int64(5), np.int64(6), np.int64(28), np.int64(40), np.int64(48), np.int64(71), np.int64(76), np.int64(78), np.int64(79), np.int64(84), np.int64(92), np.int64(107), np.int64(108), np.int64(110), np.int64(126), np.int64(129), np.int64(135), np.int64(136), np.int64(137), np.int64(142)]
+  local values at those indices: [0, 1, 0, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0, 0, 1, 1, 0, 0, 0, 1]
+  hf values at those indices:    [1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 1, 1, 1, 0]
+
+[MISMATCH] model=google__gemma-2b-it  benchmark=bbh  subset=bbh_salient_translation_error_detection
+  local_n=250  hf_n=250  n_diff=58  match_rate=76.8%
+  differing indices (first 20): [np.int64(12), np.int64(14), np.int64(15), np.int64(16), np.int64(18), np.int64(23), np.int64(47), np.int64(50), np.int64(52), np.int64(55), np.int64(58), np.int64(63), np.int64(67), np.int64(84), np.int64(86), np.int64(91), np.int64(92), np.int64(96), np.int64(102), np.int64(110)]
+  local values at those indices: [1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 1, 1]
+  hf values at those indices:    [0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 0, 1, 1, 1, 0, 1, 0, 0]
+
+[MISMATCH] model=google__gemma-2b-it  benchmark=bbh  subset=bbh_snarks
+  local_n=178  hf_n=178  n_diff=86  match_rate=51.7%
+  differing indices (first 20): [np.int64(1), np.int64(2), np.int64(4), np.int64(6), np.int64(8), np.int64(10), np.int64(11), np.int64(14), np.int64(15), np.int64(17), np.int64(18), np.int64(20), np.int64(26), np.int64(29), np.int64(30), np.int64(31), np.int64(33), np.int64(34), np.int64(42), np.int64(43)]
+  local values at those indices: [0, 0, 1, 1, 1, 1, 0, 0, 1, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0]
+  hf values at those indices:    [1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1]
+
+[MISMATCH] model=google__gemma-2b-it  benchmark=bbh  subset=bbh_sports_understanding
+  local_n=250  hf_n=250  n_diff=121  match_rate=51.6%
+  differing indices (first 20): [np.int64(2), np.int64(7), np.int64(8), np.int64(10), np.int64(11), np.int64(12), np.int64(14), np.int64(15), np.int64(19), np.int64(21), np.int64(26), np.int64(28), np.int64(29), np.int64(31), np.int64(32), np.int64(33), np.int64(35), np.int64(36), np.int64(38), np.int64(40)]
+  local values at those indices: [1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 0, 1, 0, 1, 1, 1, 1, 1]
+  hf values at those indices:    [0, 1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 1, 1, 0, 1, 0, 0, 0, 0, 0]
+
+[MISMATCH] model=google__gemma-2b-it  benchmark=bbh  subset=bbh_temporal_sequences
+  local_n=250  hf_n=250  n_diff=40  match_rate=84.0%
+  differing indices (first 20): [np.int64(1), np.int64(2), np.int64(4), np.int64(6), np.int64(9), np.int64(16), np.int64(21), np.int64(30), np.int64(48), np.int64(52), np.int64(58), np.int64(69), np.int64(71), np.int64(72), np.int64(76), np.int64(80), np.int64(98), np.int64(100), np.int64(102), np.int64(110)]
+  local values at those indices: [1, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 0, 1, 0, 0, 1, 1, 1, 1]
+  hf values at those indices:    [0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 0, 0, 0, 0]
+
+[MISMATCH] model=google__gemma-2b-it  benchmark=bbh  subset=bbh_tracking_shuffled_objects_five_objects
+  local_n=250  hf_n=250  n_diff=74  match_rate=70.4%
+  differing indices (first 20): [np.int64(2), np.int64(8), np.int64(10), np.int64(14), np.int64(15), np.int64(18), np.int64(21), np.int64(27), np.int64(30), np.int64(35), np.int64(36), np.int64(38), np.int64(40), np.int64(47), np.int64(49), np.int64(52), np.int64(57), np.int64(59), np.int64(65), np.int64(74)]
+  local values at those indices: [1, 0, 0, 0, 0, 0, 1, 1, 0, 1, 1, 0, 0, 0, 1, 0, 0, 1, 1, 0]
+  hf values at those indices:    [0, 1, 1, 1, 1, 1, 0, 0, 1, 0, 0, 1, 1, 1, 0, 1, 1, 0, 0, 1]
+
+[MISMATCH] model=google__gemma-2b-it  benchmark=bbh  subset=bbh_tracking_shuffled_objects_seven_objects
+  local_n=250  hf_n=250  n_diff=68  match_rate=72.8%
+  differing indices (first 20): [np.int64(4), np.int64(5), np.int64(7), np.int64(8), np.int64(14), np.int64(28), np.int64(32), np.int64(33), np.int64(36), np.int64(42), np.int64(43), np.int64(45), np.int64(46), np.int64(51), np.int64(52), np.int64(54), np.int64(55), np.int64(56), np.int64(59), np.int64(61)]
+  local values at those indices: [0, 1, 0, 0, 0, 1, 1, 1, 0, 1, 0, 1, 0, 0, 0, 1, 0, 1, 1, 0]
+  hf values at those indices:    [1, 0, 1, 1, 1, 0, 0, 0, 1, 0, 1, 0, 1, 1, 1, 0, 1, 0, 0, 1]
+
+[MISMATCH] model=google__gemma-2b-it  benchmark=bbh  subset=bbh_tracking_shuffled_objects_three_objects
+  local_n=250  hf_n=250  n_diff=114  match_rate=54.4%
+  differing indices (first 20): [np.int64(1), np.int64(4), np.int64(11), np.int64(12), np.int64(13), np.int64(16), np.int64(18), np.int64(20), np.int64(25), np.int64(26), np.int64(27), np.int64(29), np.int64(31), np.int64(32), np.int64(37), np.int64(39), np.int64(40), np.int64(41), np.int64(45), np.int64(47)]
+  local values at those indices: [1, 1, 1, 0, 0, 0, 1, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 1, 1, 0]
+  hf values at those indices:    [0, 0, 0, 1, 1, 1, 0, 1, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 1]
+
+[MISMATCH] model=google__gemma-2b-it  benchmark=bbh  subset=bbh_web_of_lies
+  local_n=250  hf_n=250  n_diff=128  match_rate=48.8%
+  differing indices (first 20): [np.int64(3), np.int64(5), np.int64(7), np.int64(9), np.int64(10), np.int64(15), np.int64(16), np.int64(18), np.int64(20), np.int64(22), np.int64(24), np.int64(27), np.int64(28), np.int64(29), np.int64(30), np.int64(32), np.int64(33), np.int64(34), np.int64(37), np.int64(40)]
+  local values at those indices: [1, 1, 0, 1, 0, 0, 1, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0]
+  hf values at those indices:    [0, 0, 1, 0, 1, 1, 0, 0, 1, 1, 1, 0, 1, 1, 0, 1, 1, 0, 1, 1]
+
+[MISMATCH] model=NousResearch__Yarn-Llama-2-13b-128k  benchmark=bbh  subset=bbh_boolean_expressions
+  local_n=250  hf_n=250  n_diff=22  match_rate=91.2%
+  differing indices (first 20): [np.int64(1), np.int64(4), np.int64(9), np.int64(36), np.int64(38), np.int64(46), np.int64(50), np.int64(53), np.int64(60), np.int64(76), np.int64(93), np.int64(122), np.int64(160), np.int64(173), np.int64(177), np.int64(186), np.int64(189), np.int64(204), np.int64(217), np.int64(225)]
+  local values at those indices: [1, 1, 1, 1, 0, 1, 1, 1, 0, 1, 0, 1, 1, 0, 0, 0, 0, 1, 1, 1]
+  hf values at those indices:    [0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 1, 1, 1, 1, 0, 0, 0]
+
+[MISMATCH] model=NousResearch__Yarn-Llama-2-13b-128k  benchmark=bbh  subset=bbh_causal_judgement
+  local_n=187  hf_n=187  n_diff=62  match_rate=66.8%
+  differing indices (first 20): [np.int64(1), np.int64(5), np.int64(6), np.int64(12), np.int64(14), np.int64(18), np.int64(27), np.int64(29), np.int64(30), np.int64(31), np.int64(33), np.int64(35), np.int64(37), np.int64(39), np.int64(43), np.int64(45), np.int64(46), np.int64(48), np.int64(49), np.int64(54)]
+  local values at those indices: [1, 0, 0, 1, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0]
+  hf values at those indices:    [0, 1, 1, 0, 1, 0, 1, 1, 1, 0, 1, 1, 0, 1, 1, 1, 0, 1, 0, 1]
+
+[MISMATCH] model=NousResearch__Yarn-Llama-2-13b-128k  benchmark=bbh  subset=bbh_formal_fallacies
+  local_n=250  hf_n=250  n_diff=52  match_rate=79.2%
+  differing indices (first 20): [np.int64(3), np.int64(4), np.int64(15), np.int64(20), np.int64(23), np.int64(30), np.int64(32), np.int64(35), np.int64(38), np.int64(40), np.int64(45), np.int64(52), np.int64(53), np.int64(58), np.int64(71), np.int64(76), np.int64(79), np.int64(80), np.int64(82), np.int64(88)]
+  local values at those indices: [1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 1, 1, 0, 1, 1, 1, 0, 0, 1]
+  hf values at those indices:    [0, 1, 1, 1, 0, 1, 1, 0, 1, 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0]
+
+[MISMATCH] model=NousResearch__Yarn-Llama-2-13b-128k  benchmark=bbh  subset=bbh_navigate
+  local_n=250  hf_n=250  n_diff=81  match_rate=67.6%
+  differing indices (first 20): [np.int64(6), np.int64(9), np.int64(13), np.int64(16), np.int64(22), np.int64(27), np.int64(28), np.int64(29), np.int64(31), np.int64(36), np.int64(39), np.int64(42), np.int64(47), np.int64(49), np.int64(61), np.int64(63), np.int64(65), np.int64(70), np.int64(71), np.int64(73)]
+  local values at those indices: [0, 1, 0, 0, 1, 1, 1, 1, 1, 0, 0, 1, 0, 1, 1, 1, 0, 0, 0, 1]
+  hf values at those indices:    [1, 0, 1, 1, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, 1, 1, 1, 0]
+
+[MISMATCH] model=NousResearch__Yarn-Llama-2-13b-128k  benchmark=bbh  subset=bbh_object_counting
+  local_n=250  hf_n=250  n_diff=4  match_rate=98.4%
+  differing indices (first 20): [np.int64(8), np.int64(9), np.int64(50), np.int64(104)]
+  local values at those indices: [1, 0, 0, 1]
+  hf values at those indices:    [0, 1, 1, 0]
+
+[MISMATCH] model=NousResearch__Yarn-Llama-2-13b-128k  benchmark=bbh  subset=bbh_sports_understanding
+  local_n=250  hf_n=250  n_diff=50  match_rate=80.0%
+  differing indices (first 20): [np.int64(3), np.int64(5), np.int64(9), np.int64(13), np.int64(16), np.int64(17), np.int64(19), np.int64(22), np.int64(25), np.int64(35), np.int64(36), np.int64(54), np.int64(57), np.int64(61), np.int64(62), np.int64(63), np.int64(73), np.int64(83), np.int64(84), np.int64(87)]
+  local values at those indices: [1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0, 1]
+  hf values at those indices:    [0, 1, 0, 0, 1, 0, 1, 0, 0, 1, 1, 0, 1, 1, 1, 0, 0, 1, 1, 0]
+
+[MISMATCH] model=NousResearch__Yarn-Llama-2-13b-128k  benchmark=bbh  subset=bbh_web_of_lies
+  local_n=250  hf_n=250  n_diff=72  match_rate=71.2%
+  differing indices (first 20): [np.int64(3), np.int64(6), np.int64(9), np.int64(11), np.int64(16), np.int64(17), np.int64(22), np.int64(23), np.int64(28), np.int64(33), np.int64(34), np.int64(35), np.int64(36), np.int64(41), np.int64(44), np.int64(49), np.int64(51), np.int64(53), np.int64(59), np.int64(60)]
+  local values at those indices: [1, 1, 1, 1, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1]
+  hf values at those indices:    [0, 0, 0, 0, 0, 1, 1, 0, 1, 1, 0, 1, 1, 0, 1, 1, 0, 1, 1, 0]
+
+[MISMATCH] model=meta-llama__Llama-3.1-8B-Instruct  benchmark=bbh  subset=bbh_boolean_expressions
+  local_n=250  hf_n=250  n_diff=73  match_rate=70.8%
+  differing indices (first 20): [np.int64(2), np.int64(3), np.int64(4), np.int64(5), np.int64(11), np.int64(15), np.int64(16), np.int64(18), np.int64(23), np.int64(24), np.int64(32), np.int64(40), np.int64(42), np.int64(44), np.int64(50), np.int64(54), np.int64(62), np.int64(64), np.int64(65), np.int64(66)]
+  local values at those indices: [0, 1, 1, 0, 0, 0, 1, 0, 1, 0, 0, 1, 1, 1, 0, 0, 1, 1, 0, 1]
+  hf values at those indices:    [1, 0, 0, 1, 1, 1, 0, 1, 0, 1, 1, 0, 0, 0, 1, 1, 0, 0, 1, 0]
+
+[MISMATCH] model=meta-llama__Llama-3.1-8B-Instruct  benchmark=bbh  subset=bbh_causal_judgement
+  local_n=187  hf_n=187  n_diff=80  match_rate=57.2%
+  differing indices (first 20): [np.int64(3), np.int64(4), np.int64(7), np.int64(9), np.int64(10), np.int64(13), np.int64(15), np.int64(17), np.int64(19), np.int64(21), np.int64(23), np.int64(26), np.int64(33), np.int64(34), np.int64(36), np.int64(38), np.int64(44), np.int64(45), np.int64(49), np.int64(51)]
+  local values at those indices: [0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 0, 1, 1, 0, 1, 0, 1, 0, 0, 0]
+  hf values at those indices:    [1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1, 0, 0, 1, 0, 1, 0, 1, 1, 1]
+
+[MISMATCH] model=meta-llama__Llama-3.1-8B-Instruct  benchmark=bbh  subset=bbh_date_understanding
+  local_n=250  hf_n=250  n_diff=116  match_rate=53.6%
+  differing indices (first 20): [np.int64(4), np.int64(15), np.int64(16), np.int64(19), np.int64(20), np.int64(22), np.int64(23), np.int64(26), np.int64(28), np.int64(29), np.int64(30), np.int64(32), np.int64(36), np.int64(38), np.int64(40), np.int64(43), np.int64(46), np.int64(51), np.int64(52), np.int64(54)]
+  local values at those indices: [1, 1, 1, 1, 0, 1, 1, 1, 0, 1, 0, 0, 1, 1, 1, 0, 1, 1, 1, 1]
+  hf values at those indices:    [0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1, 0, 0, 0, 0]
+
+[MISMATCH] model=meta-llama__Llama-3.1-8B-Instruct  benchmark=bbh  subset=bbh_disambiguation_qa
+  local_n=250  hf_n=250  n_diff=112  match_rate=55.2%
+  differing indices (first 20): [np.int64(4), np.int64(6), np.int64(7), np.int64(16), np.int64(18), np.int64(19), np.int64(20), np.int64(21), np.int64(23), np.int64(25), np.int64(27), np.int64(32), np.int64(33), np.int64(34), np.int64(36), np.int64(38), np.int64(40), np.int64(41), np.int64(43), np.int64(45)]
+  local values at those indices: [1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0]
+  hf values at those indices:    [0, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 0, 1, 1, 0, 1, 1, 1, 1]
+
+[MISMATCH] model=meta-llama__Llama-3.1-8B-Instruct  benchmark=bbh  subset=bbh_formal_fallacies
+  local_n=250  hf_n=250  n_diff=122  match_rate=51.2%
+  differing indices (first 20): [np.int64(4), np.int64(6), np.int64(7), np.int64(12), np.int64(16), np.int64(17), np.int64(24), np.int64(29), np.int64(32), np.int64(33), np.int64(36), np.int64(37), np.int64(38), np.int64(42), np.int64(43), np.int64(44), np.int64(46), np.int64(48), np.int64(49), np.int64(50)]
+  local values at those indices: [0, 0, 1, 0, 0, 1, 1, 1, 1, 1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0]
+  hf values at those indices:    [1, 1, 0, 1, 1, 0, 0, 0, 0, 0, 1, 1, 0, 1, 1, 0, 1, 0, 1, 1]
+
+[MISMATCH] model=meta-llama__Llama-3.1-8B-Instruct  benchmark=bbh  subset=bbh_geometric_shapes
+  local_n=250  hf_n=250  n_diff=126  match_rate=49.6%
+  differing indices (first 20): [np.int64(1), np.int64(3), np.int64(4), np.int64(7), np.int64(10), np.int64(11), np.int64(12), np.int64(14), np.int64(15), np.int64(16), np.int64(17), np.int64(18), np.int64(20), np.int64(21), np.int64(23), np.int64(24), np.int64(25), np.int64(29), np.int64(32), np.int64(33)]
+  local values at those indices: [1, 1, 1, 1, 0, 1, 1, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1]
+  hf values at those indices:    [0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0]
+
+[MISMATCH] model=meta-llama__Llama-3.1-8B-Instruct  benchmark=bbh  subset=bbh_hyperbaton
+  local_n=250  hf_n=250  n_diff=110  match_rate=56.0%
+  differing indices (first 20): [np.int64(2), np.int64(3), np.int64(6), np.int64(12), np.int64(14), np.int64(15), np.int64(21), np.int64(22), np.int64(23), np.int64(25), np.int64(27), np.int64(28), np.int64(29), np.int64(31), np.int64(33), np.int64(34), np.int64(36), np.int64(38), np.int64(39), np.int64(41)]
+  local values at those indices: [1, 1, 0, 0, 1, 1, 1, 1, 1, 0, 1, 1, 0, 0, 1, 0, 0, 1, 1, 1]
+  hf values at those indices:    [0, 0, 1, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 1, 1, 0, 0, 0]
+
+[MISMATCH] model=meta-llama__Llama-3.1-8B-Instruct  benchmark=bbh  subset=bbh_logical_deduction_five_objects
+  local_n=250  hf_n=250  n_diff=124  match_rate=50.4%
+  differing indices (first 20): [np.int64(3), np.int64(6), np.int64(10), np.int64(13), np.int64(15), np.int64(17), np.int64(18), np.int64(19), np.int64(24), np.int64(26), np.int64(30), np.int64(33), np.int64(36), np.int64(40), np.int64(41), np.int64(43), np.int64(44), np.int64(45), np.int64(46), np.int64(47)]
+  local values at those indices: [0, 1, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 1, 0, 0, 0, 1, 1, 1, 0]
+  hf values at those indices:    [1, 0, 1, 1, 1, 1, 0, 0, 0, 0, 1, 1, 0, 1, 1, 1, 0, 0, 0, 1]
+
+[MISMATCH] model=meta-llama__Llama-3.1-8B-Instruct  benchmark=bbh  subset=bbh_logical_deduction_seven_objects
+  local_n=250  hf_n=250  n_diff=122  match_rate=51.2%
+  differing indices (first 20): [np.int64(4), np.int64(5), np.int64(7), np.int64(11), np.int64(12), np.int64(15), np.int64(16), np.int64(21), np.int64(22), np.int64(23), np.int64(24), np.int64(25), np.int64(26), np.int64(28), np.int64(29), np.int64(37), np.int64(38), np.int64(39), np.int64(40), np.int64(43)]
+  local values at those indices: [1, 0, 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 1, 0, 1, 1, 1, 1, 1, 1]
+  hf values at those indices:    [0, 1, 0, 0, 1, 1, 1, 1, 0, 0, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0]
+
+[MISMATCH] model=meta-llama__Llama-3.1-8B-Instruct  benchmark=bbh  subset=bbh_logical_deduction_three_objects
+  local_n=250  hf_n=250  n_diff=102  match_rate=59.2%
+  differing indices (first 20): [np.int64(1), np.int64(6), np.int64(8), np.int64(12), np.int64(19), np.int64(20), np.int64(22), np.int64(26), np.int64(28), np.int64(29), np.int64(33), np.int64(34), np.int64(35), np.int64(38), np.int64(40), np.int64(41), np.int64(43), np.int64(49), np.int64(52), np.int64(53)]
+  local values at those indices: [1, 1, 0, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 0, 1, 1, 0, 1, 0, 0]
+  hf values at those indices:    [0, 0, 1, 1, 1, 0, 0, 1, 1, 0, 0, 1, 1, 1, 0, 0, 1, 0, 1, 1]
+
+[MISMATCH] model=meta-llama__Llama-3.1-8B-Instruct  benchmark=bbh  subset=bbh_movie_recommendation
+  local_n=250  hf_n=250  n_diff=124  match_rate=50.4%
+  differing indices (first 20): [np.int64(3), np.int64(4), np.int64(5), np.int64(8), np.int64(11), np.int64(14), np.int64(16), np.int64(17), np.int64(18), np.int64(19), np.int64(21), np.int64(26), np.int64(28), np.int64(31), np.int64(33), np.int64(34), np.int64(35), np.int64(37), np.int64(38), np.int64(39)]
+  local values at those indices: [0, 0, 1, 1, 1, 1, 1, 1, 1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 1]
+  hf values at those indices:    [1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0]
+
+[MISMATCH] model=meta-llama__Llama-3.1-8B-Instruct  benchmark=bbh  subset=bbh_navigate
+  local_n=250  hf_n=250  n_diff=126  match_rate=49.6%
+  differing indices (first 20): [np.int64(4), np.int64(5), np.int64(8), np.int64(10), np.int64(11), np.int64(13), np.int64(14), np.int64(15), np.int64(18), np.int64(19), np.int64(20), np.int64(21), np.int64(26), np.int64(27), np.int64(29), np.int64(31), np.int64(32), np.int64(33), np.int64(35), np.int64(36)]
+  local values at those indices: [0, 1, 0, 1, 1, 1, 0, 1, 1, 1, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0]
+  hf values at those indices:    [1, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 1]
+
+[MISMATCH] model=meta-llama__Llama-3.1-8B-Instruct  benchmark=bbh  subset=bbh_object_counting
+  local_n=250  hf_n=250  n_diff=126  match_rate=49.6%
+  differing indices (first 20): [np.int64(1), np.int64(2), np.int64(3), np.int64(4), np.int64(5), np.int64(6), np.int64(8), np.int64(9), np.int64(10), np.int64(13), np.int64(18), np.int64(19), np.int64(21), np.int64(22), np.int64(25), np.int64(28), np.int64(31), np.int64(35), np.int64(36), np.int64(37)]
+  local values at those indices: [0, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 0, 1, 0, 0]
+  hf values at those indices:    [1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 1, 0, 1, 1]
+
+[MISMATCH] model=meta-llama__Llama-3.1-8B-Instruct  benchmark=bbh  subset=bbh_penguins_in_a_table
+  local_n=146  hf_n=146  n_diff=76  match_rate=47.9%
+  differing indices (first 20): [np.int64(1), np.int64(3), np.int64(4), np.int64(5), np.int64(6), np.int64(7), np.int64(10), np.int64(13), np.int64(14), np.int64(15), np.int64(17), np.int64(19), np.int64(20), np.int64(21), np.int64(22), np.int64(23), np.int64(25), np.int64(29), np.int64(30), np.int64(32)]
+  local values at those indices: [0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 1, 1, 0]
+  hf values at those indices:    [1, 1, 0, 1, 0, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 0, 0, 0, 1]
+
+[MISMATCH] model=meta-llama__Llama-3.1-8B-Instruct  benchmark=bbh  subset=bbh_reasoning_about_colored_objects
+  local_n=250  hf_n=250  n_diff=124  match_rate=50.4%
+  differing indices (first 20): [np.int64(4), np.int64(6), np.int64(9), np.int64(10), np.int64(11), np.int64(16), np.int64(17), np.int64(18), np.int64(19), np.int64(20), np.int64(24), np.int64(27), np.int64(30), np.int64(35), np.int64(36), np.int64(41), np.int64(48), np.int64(51), np.int64(55), np.int64(57)]
+  local values at those indices: [0, 1, 1, 1, 1, 0, 1, 1, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 1]
+  hf values at those indices:    [1, 0, 0, 0, 0, 1, 0, 0, 1, 1, 1, 1, 1, 0, 1, 0, 1, 0, 1, 0]
+
+[MISMATCH] model=meta-llama__Llama-3.1-8B-Instruct  benchmark=bbh  subset=bbh_ruin_names
+  local_n=250  hf_n=250  n_diff=112  match_rate=55.2%
+  differing indices (first 20): [np.int64(1), np.int64(2), np.int64(3), np.int64(5), np.int64(9), np.int64(11), np.int64(12), np.int64(15), np.int64(16), np.int64(17), np.int64(22), np.int64(23), np.int64(25), np.int64(27), np.int64(28), np.int64(29), np.int64(30), np.int64(32), np.int64(33), np.int64(34)]
+  local values at those indices: [1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 1, 1, 0, 0, 1, 1]
+  hf values at those indices:    [0, 1, 1, 0, 1, 1, 0, 1, 0, 1, 1, 1, 1, 0, 0, 0, 1, 1, 0, 0]
+
+[MISMATCH] model=meta-llama__Llama-3.1-8B-Instruct  benchmark=bbh  subset=bbh_salient_translation_error_detection
+  local_n=250  hf_n=250  n_diff=124  match_rate=50.4%
+  differing indices (first 20): [np.int64(1), np.int64(2), np.int64(3), np.int64(4), np.int64(5), np.int64(11), np.int64(13), np.int64(17), np.int64(21), np.int64(25), np.int64(26), np.int64(28), np.int64(30), np.int64(32), np.int64(33), np.int64(34), np.int64(36), np.int64(37), np.int64(38), np.int64(39)]
+  local values at those indices: [0, 0, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 1, 0, 0]
+  hf values at those indices:    [1, 1, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 1]
+
+[MISMATCH] model=meta-llama__Llama-3.1-8B-Instruct  benchmark=bbh  subset=bbh_snarks
+  local_n=178  hf_n=178  n_diff=88  match_rate=50.6%
+  differing indices (first 20): [np.int64(2), np.int64(5), np.int64(10), np.int64(12), np.int64(14), np.int64(16), np.int64(18), np.int64(19), np.int64(20), np.int64(21), np.int64(22), np.int64(24), np.int64(26), np.int64(28), np.int64(30), np.int64(34), np.int64(38), np.int64(40), np.int64(41), np.int64(43)]
+  local values at those indices: [1, 0, 1, 1, 0, 0, 1, 1, 1, 0, 0, 1, 0, 1, 0, 0, 0, 1, 0, 0]
+  hf values at those indices:    [0, 1, 0, 0, 1, 1, 0, 0, 0, 1, 1, 0, 1, 0, 1, 1, 1, 0, 1, 1]
+
+[MISMATCH] model=meta-llama__Llama-3.1-8B-Instruct  benchmark=bbh  subset=bbh_sports_understanding
+  local_n=250  hf_n=250  n_diff=114  match_rate=54.4%
+  differing indices (first 20): [np.int64(4), np.int64(7), np.int64(8), np.int64(9), np.int64(11), np.int64(14), np.int64(16), np.int64(19), np.int64(20), np.int64(21), np.int64(22), np.int64(29), np.int64(30), np.int64(32), np.int64(36), np.int64(38), np.int64(41), np.int64(43), np.int64(44), np.int64(45)]
+  local values at those indices: [1, 0, 1, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 1, 0, 1, 1, 0, 0]
+  hf values at those indices:    [0, 1, 0, 1, 1, 1, 0, 0, 0, 0, 1, 1, 1, 1, 0, 1, 0, 0, 1, 1]
+
+[MISMATCH] model=meta-llama__Llama-3.1-8B-Instruct  benchmark=bbh  subset=bbh_temporal_sequences
+  local_n=250  hf_n=250  n_diff=106  match_rate=57.6%
+  differing indices (first 20): [np.int64(1), np.int64(3), np.int64(5), np.int64(6), np.int64(8), np.int64(12), np.int64(13), np.int64(15), np.int64(16), np.int64(17), np.int64(19), np.int64(21), np.int64(22), np.int64(23), np.int64(26), np.int64(28), np.int64(31), np.int64(32), np.int64(36), np.int64(38)]
+  local values at those indices: [1, 0, 0, 1, 0, 1, 1, 1, 0, 0, 1, 0, 1, 0, 0, 1, 1, 0, 1, 1]
+  hf values at those indices:    [0, 1, 1, 0, 1, 0, 0, 0, 1, 1, 0, 1, 0, 1, 1, 0, 0, 1, 0, 0]
+
+[MISMATCH] model=meta-llama__Llama-3.1-8B-Instruct  benchmark=bbh  subset=bbh_tracking_shuffled_objects_five_objects
+  local_n=250  hf_n=250  n_diff=74  match_rate=70.4%
+  differing indices (first 20): [np.int64(1), np.int64(3), np.int64(6), np.int64(11), np.int64(12), np.int64(14), np.int64(16), np.int64(22), np.int64(25), np.int64(27), np.int64(35), np.int64(36), np.int64(43), np.int64(44), np.int64(47), np.int64(54), np.int64(56), np.int64(59), np.int64(63), np.int64(75)]
+  local values at those indices: [1, 0, 1, 1, 0, 1, 0, 0, 1, 0, 0, 1, 1, 1, 1, 0, 1, 0, 0, 1]
+  hf values at those indices:    [0, 1, 0, 0, 1, 0, 1, 1, 0, 1, 1, 0, 0, 0, 0, 1, 0, 1, 1, 0]
+
+[MISMATCH] model=meta-llama__Llama-3.1-8B-Instruct  benchmark=bbh  subset=bbh_tracking_shuffled_objects_seven_objects
+  local_n=250  hf_n=250  n_diff=70  match_rate=72.0%
+  differing indices (first 20): [np.int64(1), np.int64(2), np.int64(11), np.int64(15), np.int64(23), np.int64(24), np.int64(29), np.int64(31), np.int64(32), np.int64(37), np.int64(38), np.int64(44), np.int64(45), np.int64(53), np.int64(62), np.int64(63), np.int64(64), np.int64(66), np.int64(72), np.int64(74)]
+  local values at those indices: [1, 1, 0, 0, 1, 0, 0, 1, 0, 1, 1, 1, 1, 1, 0, 0, 0, 1, 0, 0]
+  hf values at those indices:    [0, 0, 1, 1, 0, 1, 1, 0, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0, 1, 1]
+
+[MISMATCH] model=meta-llama__Llama-3.1-8B-Instruct  benchmark=bbh  subset=bbh_tracking_shuffled_objects_three_objects
+  local_n=250  hf_n=250  n_diff=106  match_rate=57.6%
+  differing indices (first 20): [np.int64(4), np.int64(6), np.int64(10), np.int64(11), np.int64(12), np.int64(13), np.int64(14), np.int64(17), np.int64(18), np.int64(27), np.int64(29), np.int64(33), np.int64(36), np.int64(37), np.int64(38), np.int64(39), np.int64(40), np.int64(41), np.int64(44), np.int64(46)]
+  local values at those indices: [1, 0, 0, 0, 1, 0, 0, 1, 0, 1, 1, 1, 0, 0, 1, 0, 1, 1, 0, 0]
+  hf values at those indices:    [0, 1, 1, 1, 0, 1, 1, 0, 1, 0, 0, 0, 1, 1, 0, 1, 0, 0, 1, 1]
+
+[MISMATCH] model=meta-llama__Llama-3.1-8B-Instruct  benchmark=bbh  subset=bbh_web_of_lies
+  local_n=250  hf_n=250  n_diff=132  match_rate=47.2%
+  differing indices (first 20): [np.int64(0), np.int64(2), np.int64(4), np.int64(6), np.int64(12), np.int64(13), np.int64(14), np.int64(15), np.int64(17), np.int64(19), np.int64(20), np.int64(25), np.int64(28), np.int64(29), np.int64(30), np.int64(32), np.int64(33), np.int64(34), np.int64(35), np.int64(36)]
+  local values at those indices: [1, 0, 0, 1, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 1, 1]
+  hf values at those indices:    [0, 1, 1, 0, 1, 0, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 0, 0, 0]
+
+[MISMATCH] model=meta-llama__Llama-2-70b-hf  benchmark=bbh  subset=bbh_boolean_expressions
+  local_n=250  hf_n=250  n_diff=7  match_rate=97.2%
+  differing indices (first 20): [np.int64(2), np.int64(14), np.int64(38), np.int64(132), np.int64(145), np.int64(188), np.int64(218)]
+  local values at those indices: [0, 1, 0, 0, 1, 1, 0]
+  hf values at those indices:    [1, 0, 1, 1, 0, 0, 1]
+
+[MISMATCH] model=meta-llama__Llama-2-70b-hf  benchmark=bbh  subset=bbh_causal_judgement
+  local_n=187  hf_n=187  n_diff=16  match_rate=91.4%
+  differing indices (first 20): [np.int64(3), np.int64(7), np.int64(14), np.int64(22), np.int64(29), np.int64(37), np.int64(46), np.int64(65), np.int64(75), np.int64(106), np.int64(111), np.int64(158), np.int64(167), np.int64(169), np.int64(173), np.int64(183)]
+  local values at those indices: [1, 1, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 1, 0, 0]
+  hf values at those indices:    [0, 0, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 0, 0, 1, 1]
+
+[MISMATCH] model=meta-llama__Llama-2-70b-hf  benchmark=bbh  subset=bbh_formal_fallacies
+  local_n=250  hf_n=250  n_diff=24  match_rate=90.4%
+  differing indices (first 20): [np.int64(33), np.int64(50), np.int64(52), np.int64(57), np.int64(61), np.int64(75), np.int64(113), np.int64(136), np.int64(138), np.int64(141), np.int64(158), np.int64(159), np.int64(160), np.int64(165), np.int64(192), np.int64(204), np.int64(205), np.int64(208), np.int64(211), np.int64(214)]
+  local values at those indices: [1, 0, 1, 1, 1, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1]
+  hf values at those indices:    [0, 1, 0, 0, 0, 0, 0, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0]
+
+[MISMATCH] model=meta-llama__Llama-2-70b-hf  benchmark=bbh  subset=bbh_navigate
+  local_n=250  hf_n=250  n_diff=148  match_rate=40.8%
+  differing indices (first 20): [np.int64(1), np.int64(7), np.int64(10), np.int64(11), np.int64(12), np.int64(14), np.int64(15), np.int64(17), np.int64(18), np.int64(19), np.int64(22), np.int64(23), np.int64(24), np.int64(26), np.int64(27), np.int64(28), np.int64(30), np.int64(31), np.int64(32), np.int64(36)]
+  local values at those indices: [1, 0, 1, 1, 0, 0, 1, 0, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 0, 0]
+  hf values at those indices:    [0, 1, 0, 0, 1, 1, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 1]
+
+[MISMATCH] model=meta-llama__Llama-2-70b-hf  benchmark=bbh  subset=bbh_object_counting
+  local_n=250  hf_n=250  n_diff=11  match_rate=95.6%
+  differing indices (first 20): [np.int64(9), np.int64(50), np.int64(107), np.int64(122), np.int64(135), np.int64(143), np.int64(173), np.int64(177), np.int64(214), np.int64(235), np.int64(243)]
+  local values at those indices: [0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0]
+  hf values at those indices:    [1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1]
+
+[MISMATCH] model=meta-llama__Llama-2-70b-hf  benchmark=bbh  subset=bbh_sports_understanding
+  local_n=250  hf_n=250  n_diff=17  match_rate=93.2%
+  differing indices (first 20): [np.int64(11), np.int64(85), np.int64(94), np.int64(102), np.int64(109), np.int64(119), np.int64(120), np.int64(127), np.int64(134), np.int64(140), np.int64(143), np.int64(149), np.int64(167), np.int64(178), np.int64(190), np.int64(217), np.int64(249)]
+  local values at those indices: [1, 0, 1, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0]
+  hf values at those indices:    [0, 1, 0, 1, 1, 0, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1]
+
+[MISMATCH] model=meta-llama__Llama-2-70b-hf  benchmark=bbh  subset=bbh_web_of_lies
+  local_n=250  hf_n=250  n_diff=7  match_rate=97.2%
+  differing indices (first 20): [np.int64(22), np.int64(39), np.int64(90), np.int64(126), np.int64(177), np.int64(215), np.int64(220)]
+  local values at those indices: [0, 0, 1, 1, 0, 0, 1]
+  hf values at those indices:    [1, 1, 0, 0, 1, 1, 0]
+
+[MISMATCH] model=bigcode__starcoder2-7b  benchmark=bbh  subset=bbh_boolean_expressions
+  local_n=250  hf_n=250  n_diff=85  match_rate=66.0%
+  differing indices (first 20): [np.int64(3), np.int64(9), np.int64(12), np.int64(14), np.int64(15), np.int64(16), np.int64(18), np.int64(19), np.int64(20), np.int64(23), np.int64(24), np.int64(25), np.int64(35), np.int64(36), np.int64(38), np.int64(45), np.int64(47), np.int64(50), np.int64(51), np.int64(53)]
+  local values at those indices: [1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 0, 1, 1, 0, 0, 0, 1, 0, 1]
+  hf values at those indices:    [0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 0, 1, 1, 1, 0, 1, 0]
+
+[MISMATCH] model=bigcode__starcoder2-7b  benchmark=bbh  subset=bbh_causal_judgement
+  local_n=187  hf_n=187  n_diff=78  match_rate=58.3%
+  differing indices (first 20): [np.int64(1), np.int64(3), np.int64(7), np.int64(8), np.int64(9), np.int64(12), np.int64(13), np.int64(15), np.int64(17), np.int64(18), np.int64(19), np.int64(21), np.int64(23), np.int64(24), np.int64(26), np.int64(27), np.int64(29), np.int64(30), np.int64(31), np.int64(32)]
+  local values at those indices: [0, 0, 0, 1, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 1, 1, 0, 1, 0, 1]
+  hf values at those indices:    [1, 1, 1, 0, 0, 1, 1, 0, 1, 1, 0, 1, 1, 0, 0, 0, 1, 0, 1, 0]
+
+[MISMATCH] model=bigcode__starcoder2-7b  benchmark=bbh  subset=bbh_date_understanding
+  local_n=250  hf_n=250  n_diff=98  match_rate=60.8%
+  differing indices (first 20): [np.int64(1), np.int64(8), np.int64(9), np.int64(10), np.int64(13), np.int64(16), np.int64(18), np.int64(25), np.int64(29), np.int64(30), np.int64(33), np.int64(34), np.int64(35), np.int64(41), np.int64(44), np.int64(51), np.int64(52), np.int64(53), np.int64(55), np.int64(58)]
+  local values at those indices: [0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 1, 0, 0, 1, 1, 1, 1, 0, 0]
+  hf values at those indices:    [1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 1, 0, 0, 0, 0, 1, 1]
+
+[MISMATCH] model=bigcode__starcoder2-7b  benchmark=bbh  subset=bbh_disambiguation_qa
+  local_n=250  hf_n=250  n_diff=116  match_rate=53.6%
+  differing indices (first 20): [np.int64(4), np.int64(6), np.int64(7), np.int64(9), np.int64(10), np.int64(11), np.int64(12), np.int64(13), np.int64(14), np.int64(15), np.int64(18), np.int64(19), np.int64(21), np.int64(23), np.int64(24), np.int64(25), np.int64(27), np.int64(31), np.int64(33), np.int64(36)]
+  local values at those indices: [0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 1, 0]
+  hf values at those indices:    [1, 0, 1, 1, 1, 1, 0, 1, 0, 1, 1, 0, 1, 1, 0, 1, 1, 1, 0, 1]
+
+[MISMATCH] model=bigcode__starcoder2-7b  benchmark=bbh  subset=bbh_formal_fallacies
+  local_n=250  hf_n=250  n_diff=134  match_rate=46.4%
+  differing indices (first 20): [np.int64(1), np.int64(3), np.int64(6), np.int64(7), np.int64(8), np.int64(10), np.int64(11), np.int64(13), np.int64(14), np.int64(15), np.int64(16), np.int64(17), np.int64(18), np.int64(21), np.int64(26), np.int64(28), np.int64(29), np.int64(30), np.int64(36), np.int64(37)]
+  local values at those indices: [0, 1, 0, 1, 1, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 0]
+  hf values at those indices:    [1, 0, 1, 0, 0, 0, 1, 1, 1, 1, 1, 0, 1, 1, 0, 0, 1, 1, 1, 1]
+
+[MISMATCH] model=bigcode__starcoder2-7b  benchmark=bbh  subset=bbh_geometric_shapes
+  local_n=250  hf_n=250  n_diff=124  match_rate=50.4%
+  differing indices (first 20): [np.int64(1), np.int64(2), np.int64(3), np.int64(5), np.int64(7), np.int64(8), np.int64(9), np.int64(10), np.int64(11), np.int64(14), np.int64(15), np.int64(16), np.int64(17), np.int64(18), np.int64(21), np.int64(23), np.int64(25), np.int64(29), np.int64(30), np.int64(32)]
+  local values at those indices: [0, 1, 1, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1]
+  hf values at those indices:    [1, 0, 0, 1, 1, 0, 1, 1, 0, 0, 1, 1, 1, 0, 1, 1, 1, 1, 1, 0]
+
+[MISMATCH] model=bigcode__starcoder2-7b  benchmark=bbh  subset=bbh_hyperbaton
+  local_n=250  hf_n=250  n_diff=118  match_rate=52.8%
+  differing indices (first 20): [np.int64(1), np.int64(4), np.int64(9), np.int64(10), np.int64(14), np.int64(15), np.int64(16), np.int64(17), np.int64(18), np.int64(20), np.int64(21), np.int64(22), np.int64(25), np.int64(27), np.int64(28), np.int64(29), np.int64(31), np.int64(33), np.int64(34), np.int64(37)]
+  local values at those indices: [1, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 1, 1, 1, 0]
+  hf values at those indices:    [0, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 0, 1, 1, 0, 0, 0, 0, 1]
+
+[MISMATCH] model=bigcode__starcoder2-7b  benchmark=bbh  subset=bbh_logical_deduction_five_objects
+  local_n=250  hf_n=250  n_diff=94  match_rate=62.4%
+  differing indices (first 20): [np.int64(1), np.int64(8), np.int64(10), np.int64(11), np.int64(13), np.int64(15), np.int64(16), np.int64(19), np.int64(20), np.int64(24), np.int64(29), np.int64(31), np.int64(33), np.int64(35), np.int64(38), np.int64(39), np.int64(40), np.int64(41), np.int64(45), np.int64(46)]
+  local values at those indices: [0, 1, 1, 1, 1, 0, 0, 1, 1, 0, 1, 0, 0, 1, 1, 1, 0, 0, 0, 1]
+  hf values at those indices:    [1, 0, 0, 0, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1, 1, 1, 0]
+
+[MISMATCH] model=bigcode__starcoder2-7b  benchmark=bbh  subset=bbh_logical_deduction_seven_objects
+  local_n=250  hf_n=250  n_diff=80  match_rate=68.0%
+  differing indices (first 20): [np.int64(1), np.int64(2), np.int64(6), np.int64(7), np.int64(9), np.int64(18), np.int64(20), np.int64(24), np.int64(26), np.int64(32), np.int64(33), np.int64(37), np.int64(42), np.int64(44), np.int64(45), np.int64(47), np.int64(50), np.int64(52), np.int64(57), np.int64(59)]
+  local values at those indices: [1, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 1, 0, 1, 0, 0]
+  hf values at those indices:    [0, 1, 0, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 1, 0, 0, 1, 0, 1, 1]
+
+[MISMATCH] model=bigcode__starcoder2-7b  benchmark=bbh  subset=bbh_logical_deduction_three_objects
+  local_n=250  hf_n=250  n_diff=122  match_rate=51.2%
+  differing indices (first 20): [np.int64(3), np.int64(4), np.int64(6), np.int64(7), np.int64(8), np.int64(10), np.int64(12), np.int64(14), np.int64(20), np.int64(24), np.int64(26), np.int64(28), np.int64(30), np.int64(31), np.int64(33), np.int64(35), np.int64(36), np.int64(37), np.int64(39), np.int64(40)]
+  local values at those indices: [0, 1, 1, 0, 0, 0, 1, 0, 1, 1, 0, 1, 1, 1, 1, 0, 0, 1, 1, 1]
+  hf values at those indices:    [1, 0, 0, 1, 1, 1, 0, 1, 0, 0, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0]
+
+[MISMATCH] model=bigcode__starcoder2-7b  benchmark=bbh  subset=bbh_movie_recommendation
+  local_n=250  hf_n=250  n_diff=126  match_rate=49.6%
+  differing indices (first 20): [np.int64(1), np.int64(3), np.int64(4), np.int64(5), np.int64(6), np.int64(7), np.int64(8), np.int64(9), np.int64(13), np.int64(14), np.int64(18), np.int64(19), np.int64(21), np.int64(22), np.int64(23), np.int64(28), np.int64(31), np.int64(33), np.int64(34), np.int64(36)]
+  local values at those indices: [0, 0, 1, 1, 1, 1, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0]
+  hf values at those indices:    [1, 1, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 1, 1, 1, 1, 0, 0, 0, 1]
+
+[MISMATCH] model=bigcode__starcoder2-7b  benchmark=bbh  subset=bbh_navigate
+  local_n=250  hf_n=250  n_diff=118  match_rate=52.8%
+  differing indices (first 20): [np.int64(0), np.int64(7), np.int64(12), np.int64(13), np.int64(15), np.int64(16), np.int64(22), np.int64(24), np.int64(26), np.int64(30), np.int64(31), np.int64(32), np.int64(33), np.int64(34), np.int64(37), np.int64(43), np.int64(45), np.int64(49), np.int64(52), np.int64(53)]
+  local values at those indices: [1, 0, 0, 1, 0, 0, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1]
+  hf values at those indices:    [0, 1, 1, 0, 1, 1, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0]
+
+[MISMATCH] model=bigcode__starcoder2-7b  benchmark=bbh  subset=bbh_object_counting
+  local_n=250  hf_n=250  n_diff=109  match_rate=56.4%
+  differing indices (first 20): [np.int64(2), np.int64(3), np.int64(4), np.int64(5), np.int64(6), np.int64(13), np.int64(18), np.int64(19), np.int64(21), np.int64(22), np.int64(26), np.int64(27), np.int64(28), np.int64(33), np.int64(34), np.int64(36), np.int64(37), np.int64(38), np.int64(40), np.int64(41)]
+  local values at those indices: [1, 0, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 1, 0, 1]
+  hf values at those indices:    [0, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0]
+
+[MISMATCH] model=bigcode__starcoder2-7b  benchmark=bbh  subset=bbh_penguins_in_a_table
+  local_n=146  hf_n=146  n_diff=72  match_rate=50.7%
+  differing indices (first 20): [np.int64(2), np.int64(3), np.int64(6), np.int64(7), np.int64(9), np.int64(10), np.int64(12), np.int64(14), np.int64(17), np.int64(19), np.int64(20), np.int64(22), np.int64(23), np.int64(25), np.int64(28), np.int64(29), np.int64(30), np.int64(33), np.int64(34), np.int64(35)]
+  local values at those indices: [1, 0, 0, 0, 1, 0, 0, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0]
+  hf values at those indices:    [0, 1, 1, 1, 0, 1, 1, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 1, 1]
+
+[MISMATCH] model=bigcode__starcoder2-7b  benchmark=bbh  subset=bbh_reasoning_about_colored_objects
+  local_n=250  hf_n=250  n_diff=112  match_rate=55.2%
+  differing indices (first 20): [np.int64(1), np.int64(5), np.int64(6), np.int64(7), np.int64(8), np.int64(12), np.int64(14), np.int64(16), np.int64(18), np.int64(19), np.int64(23), np.int64(25), np.int64(28), np.int64(29), np.int64(30), np.int64(31), np.int64(35), np.int64(43), np.int64(45), np.int64(46)]
+  local values at those indices: [0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 1, 0, 1, 1, 0]
+  hf values at those indices:    [1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 0, 0, 1, 0, 1, 0, 1, 0, 0, 1]
+
+[MISMATCH] model=bigcode__starcoder2-7b  benchmark=bbh  subset=bbh_ruin_names
+  local_n=250  hf_n=250  n_diff=80  match_rate=68.0%
+  differing indices (first 20): [np.int64(6), np.int64(8), np.int64(9), np.int64(11), np.int64(15), np.int64(18), np.int64(20), np.int64(22), np.int64(24), np.int64(25), np.int64(27), np.int64(32), np.int64(34), np.int64(40), np.int64(43), np.int64(48), np.int64(51), np.int64(52), np.int64(57), np.int64(67)]
+  local values at those indices: [1, 1, 0, 0, 1, 0, 1, 1, 0, 0, 1, 0, 1, 1, 1, 0, 0, 1, 0, 1]
+  hf values at those indices:    [0, 0, 1, 1, 0, 1, 0, 0, 1, 1, 0, 1, 0, 0, 0, 1, 1, 0, 1, 0]
+
+[MISMATCH] model=bigcode__starcoder2-7b  benchmark=bbh  subset=bbh_salient_translation_error_detection
+  local_n=250  hf_n=250  n_diff=106  match_rate=57.6%
+  differing indices (first 20): [np.int64(1), np.int64(2), np.int64(4), np.int64(5), np.int64(6), np.int64(8), np.int64(10), np.int64(11), np.int64(13), np.int64(14), np.int64(15), np.int64(16), np.int64(18), np.int64(21), np.int64(25), np.int64(30), np.int64(31), np.int64(32), np.int64(33), np.int64(36)]
+  local values at those indices: [0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 0]
+  hf values at those indices:    [1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1]
+
+[MISMATCH] model=bigcode__starcoder2-7b  benchmark=bbh  subset=bbh_snarks
+  local_n=178  hf_n=178  n_diff=86  match_rate=51.7%
+  differing indices (first 20): [np.int64(2), np.int64(12), np.int64(13), np.int64(14), np.int64(15), np.int64(16), np.int64(18), np.int64(19), np.int64(20), np.int64(22), np.int64(25), np.int64(26), np.int64(28), np.int64(29), np.int64(30), np.int64(31), np.int64(32), np.int64(34), np.int64(38), np.int64(43)]
+  local values at those indices: [0, 0, 0, 1, 0, 1, 0, 0, 0, 1, 0, 1, 0, 1, 1, 1, 0, 1, 1, 1]
+  hf values at those indices:    [1, 1, 1, 0, 1, 0, 1, 1, 1, 0, 1, 0, 1, 0, 0, 0, 1, 0, 0, 0]
+
+[MISMATCH] model=bigcode__starcoder2-7b  benchmark=bbh  subset=bbh_sports_understanding
+  local_n=250  hf_n=250  n_diff=126  match_rate=49.6%
+  differing indices (first 20): [np.int64(3), np.int64(9), np.int64(11), np.int64(12), np.int64(13), np.int64(14), np.int64(16), np.int64(17), np.int64(19), np.int64(26), np.int64(27), np.int64(28), np.int64(29), np.int64(31), np.int64(35), np.int64(38), np.int64(43), np.int64(44), np.int64(45), np.int64(46)]
+  local values at those indices: [1, 1, 0, 1, 1, 0, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 0, 1, 0, 1]
+  hf values at those indices:    [0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 1, 0, 1, 0]
+
+[MISMATCH] model=bigcode__starcoder2-7b  benchmark=bbh  subset=bbh_temporal_sequences
+  local_n=250  hf_n=250  n_diff=60  match_rate=76.0%
+  differing indices (first 20): [np.int64(4), np.int64(5), np.int64(8), np.int64(12), np.int64(17), np.int64(18), np.int64(25), np.int64(26), np.int64(29), np.int64(34), np.int64(36), np.int64(43), np.int64(45), np.int64(54), np.int64(66), np.int64(67), np.int64(74), np.int64(75), np.int64(81), np.int64(85)]
+  local values at those indices: [0, 1, 1, 0, 1, 1, 0, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0]
+  hf values at those indices:    [1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 1, 1, 1, 1, 1, 1, 0, 1, 1]
+
+[MISMATCH] model=bigcode__starcoder2-7b  benchmark=bbh  subset=bbh_tracking_shuffled_objects_five_objects
+  local_n=250  hf_n=250  n_diff=48  match_rate=80.8%
+  differing indices (first 20): [np.int64(17), np.int64(22), np.int64(28), np.int64(34), np.int64(35), np.int64(46), np.int64(48), np.int64(49), np.int64(66), np.int64(67), np.int64(71), np.int64(72), np.int64(73), np.int64(74), np.int64(87), np.int64(92), np.int64(93), np.int64(95), np.int64(97), np.int64(103)]
+  local values at those indices: [1, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 1, 0, 1, 1, 1, 0, 0]
+  hf values at those indices:    [0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, 1, 1]
+
+[MISMATCH] model=bigcode__starcoder2-7b  benchmark=bbh  subset=bbh_tracking_shuffled_objects_seven_objects
+  local_n=250  hf_n=250  n_diff=50  match_rate=80.0%
+  differing indices (first 20): [np.int64(1), np.int64(12), np.int64(15), np.int64(24), np.int64(28), np.int64(32), np.int64(33), np.int64(36), np.int64(37), np.int64(43), np.int64(48), np.int64(49), np.int64(67), np.int64(73), np.int64(82), np.int64(85), np.int64(86), np.int64(89), np.int64(90), np.int64(91)]
+  local values at those indices: [1, 1, 1, 0, 1, 0, 1, 0, 1, 1, 0, 0, 1, 0, 1, 1, 1, 0, 0, 0]
+  hf values at those indices:    [0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 1, 1, 0, 1, 0, 0, 0, 1, 1, 1]
+
+[MISMATCH] model=bigcode__starcoder2-7b  benchmark=bbh  subset=bbh_tracking_shuffled_objects_three_objects
+  local_n=250  hf_n=250  n_diff=100  match_rate=60.0%
+  differing indices (first 20): [np.int64(2), np.int64(10), np.int64(11), np.int64(13), np.int64(15), np.int64(16), np.int64(17), np.int64(18), np.int64(19), np.int64(27), np.int64(40), np.int64(43), np.int64(44), np.int64(45), np.int64(48), np.int64(49), np.int64(54), np.int64(63), np.int64(66), np.int64(67)]
+  local values at those indices: [0, 0, 0, 1, 1, 1, 1, 0, 0, 1, 1, 1, 0, 1, 0, 1, 1, 1, 1, 1]
+  hf values at those indices:    [1, 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0]
+
+[MISMATCH] model=bigcode__starcoder2-7b  benchmark=bbh  subset=bbh_web_of_lies
+  local_n=250  hf_n=250  n_diff=128  match_rate=48.8%
+  differing indices (first 20): [np.int64(3), np.int64(5), np.int64(7), np.int64(9), np.int64(10), np.int64(15), np.int64(16), np.int64(18), np.int64(20), np.int64(22), np.int64(24), np.int64(27), np.int64(28), np.int64(29), np.int64(30), np.int64(32), np.int64(33), np.int64(34), np.int64(37), np.int64(40)]
+  local values at those indices: [0, 0, 1, 0, 1, 1, 0, 0, 1, 1, 1, 0, 1, 1, 0, 1, 1, 0, 1, 1]
+  hf values at those indices:    [1, 1, 0, 1, 0, 0, 1, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0]
+
+[MISMATCH] model=lmsys__vicuna-13b-v1.3  benchmark=gpqa  subset=gpqa_main
+  local_n=448  hf_n=448  n_diff=156  match_rate=65.2%
+  differing indices (first 20): [np.int64(1), np.int64(10), np.int64(11), np.int64(12), np.int64(13), np.int64(25), np.int64(31), np.int64(32), np.int64(35), np.int64(36), np.int64(37), np.int64(39), np.int64(41), np.int64(44), np.int64(45), np.int64(47), np.int64(51), np.int64(52), np.int64(58), np.int64(63)]
+  local values at those indices: [0, 1, 1, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 1, 0, 0, 1, 1, 1]
+  hf values at those indices:    [1, 0, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0]
+
+[MISMATCH] model=WizardLMTeam__WizardLM-13B-V1.2  benchmark=gpqa  subset=gpqa_main
+  local_n=448  hf_n=448  n_diff=192  match_rate=57.1%
+  differing indices (first 20): [np.int64(5), np.int64(8), np.int64(12), np.int64(14), np.int64(15), np.int64(18), np.int64(21), np.int64(26), np.int64(31), np.int64(33), np.int64(36), np.int64(39), np.int64(40), np.int64(41), np.int64(42), np.int64(43), np.int64(44), np.int64(45), np.int64(51), np.int64(52)]
+  local values at those indices: [0, 0, 1, 1, 1, 1, 1, 0, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+  hf values at those indices:    [1, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+
+[MISMATCH] model=databricks__dolly-v1-6b  benchmark=gpqa  subset=gpqa_main
+  local_n=448  hf_n=448  n_diff=161  match_rate=64.1%
+  differing indices (first 20): [np.int64(2), np.int64(6), np.int64(8), np.int64(12), np.int64(16), np.int64(31), np.int64(32), np.int64(33), np.int64(34), np.int64(38), np.int64(42), np.int64(44), np.int64(45), np.int64(46), np.int64(48), np.int64(50), np.int64(52), np.int64(53), np.int64(54), np.int64(55)]
+  local values at those indices: [0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0]
+  hf values at those indices:    [1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 1, 1, 1, 1]
+
+[MISMATCH] model=upstage__SOLAR-10.7B-Instruct-v1.0  benchmark=gpqa  subset=gpqa_main
+  local_n=448  hf_n=448  n_diff=192  match_rate=57.1%
+  differing indices (first 20): [np.int64(1), np.int64(3), np.int64(4), np.int64(7), np.int64(8), np.int64(14), np.int64(16), np.int64(19), np.int64(21), np.int64(22), np.int64(23), np.int64(26), np.int64(27), np.int64(29), np.int64(31), np.int64(32), np.int64(35), np.int64(41), np.int64(42), np.int64(44)]
+  local values at those indices: [1, 1, 1, 0, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 0, 0, 1, 0]
+  hf values at those indices:    [0, 0, 0, 1, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 0, 1, 1, 1, 0, 1]
+
+[MISMATCH] model=google__recurrentgemma-9b  benchmark=gpqa  subset=gpqa_main
+  local_n=448  hf_n=448  n_diff=175  match_rate=60.9%
+  differing indices (first 20): [np.int64(2), np.int64(4), np.int64(5), np.int64(7), np.int64(9), np.int64(10), np.int64(12), np.int64(13), np.int64(15), np.int64(16), np.int64(22), np.int64(24), np.int64(28), np.int64(29), np.int64(31), np.int64(32), np.int64(33), np.int64(34), np.int64(38), np.int64(39)]
+  local values at those indices: [0, 0, 1, 0, 0, 0, 0, 1, 1, 1, 1, 0, 1, 0, 1, 1, 1, 1, 1, 0]
+  hf values at those indices:    [1, 1, 0, 1, 1, 1, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1]
