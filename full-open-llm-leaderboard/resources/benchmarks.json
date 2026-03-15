@@ -26,11 +26,8 @@
         "web_of_lies"
     ],
     "gpqa": [
-        "diamond",
-        "extended",
         "main"
     ],
-    "ifeval": [],
     "math": [
         "algebra_hard",
         "counting_and_prob_hard",
@@ -42,10 +39,5 @@
     ],
     "mmlu": [
         "pro"
-    ],
-    "musr": [
-        "murder_mysteries",
-        "object_placements",
-        "team_allocation"
     ]
 }

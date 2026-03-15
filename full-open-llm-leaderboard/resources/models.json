@@ -455,6 +455,5 @@
     "HuggingFaceTB__SmolLM2-135M-Instruct",
     "HuggingFaceTB__SmolLM2-360M-Instruct",
     "TinyLlama__TinyLlama-1.1B-Chat-v1.0",
-    "PrimeIntellect__INTELLECT-1-Instruct",
-    "CausalLM__preview-1-hf"
+    "PrimeIntellect__INTELLECT-1-Instruct"
 ]
