@@ -4,7 +4,12 @@ Verify that local per-instance model scores in partial-open-llm-leaderboard/data
 match the authoritative scores on the Hugging Face Open LLM Leaderboard.
 
 For each benchmark a random sample of models is chosen, and their per-instance
-scores are compared against the HuggingFace source row-by-row.
+scores are compared against the HuggingFace source.
+
+HuggingFace model-details repos return questions in evaluation order, which can
+differ from the canonical dataset order used in the local model_scores.csv.
+The comparison aligns rows by sorting the HF data on `doc_id` (the question's
+0-based index in the original task), which matches the canonical order.
 
 Supported benchmarks (v2 leaderboard):
   BBH, GPQA, MMLU-Pro
@@ -82,10 +87,14 @@ def get_subset_col(df: pd.DataFrame) -> str:
     return "scores_subset" if "scores_subset" in df.columns else "subset"
 
 
-def load_hf_config(model: str, config: str) -> pd.Series | None:
+def load_hf_config(model: str, config: str) -> pd.DataFrame | None:
     """
-    Load a HuggingFace dataset config and return the correctness column as a
-    Series (reset index). Returns None on any error.
+    Load a HuggingFace dataset config and return a DataFrame containing at
+    minimum `doc_id` and the first available correctness column.
+    Returns None on any error.
+
+    Rows are sorted by `doc_id` (ascending) so that they align with the
+    canonical dataset order used in the local model_scores.csv.
     """
     repo_id = f"{HF_OWNER}/{model}-details"
     try:
@@ -102,7 +111,12 @@ def load_hf_config(model: str, config: str) -> pd.Series | None:
         )
         return None
 
-    return hf_df[col].reset_index(drop=True)
+    if "doc_id" in hf_df.columns:
+        hf_df = hf_df.sort_values("doc_id").reset_index(drop=True)
+    else:
+        print(f"      [WARN] No doc_id column in {config}; using raw row order.")
+
+    return hf_df[[col]].rename(columns={col: "score"})
 
 
 def compare_scores(local: pd.Series, hf: pd.Series) -> dict:
@@ -238,7 +252,7 @@ def verify_benchmark(
                 print(f"  Loading HF config: {config} …")
                 hf_whole_cache[model] = load_hf_config(model, config)
 
-            hf_all = hf_whole_cache[model]
+            hf_all_df = hf_whole_cache[model]
 
             # Iterate subsets from the enum and compare per local subset slice
             hf_cursor = 0  # track position within the whole HF series
@@ -248,7 +262,7 @@ def verify_benchmark(
                 )
                 local_n = len(local_rows)
 
-                if hf_all is None:
+                if hf_all_df is None:
                     row = {
                         "model": model, "benchmark": str(benchmark), "subset": subset,
                         "size_mismatch": True, "local_n": local_n, "hf_n": 0,
@@ -261,7 +275,7 @@ def verify_benchmark(
                     results.append(row)
                     continue
 
-                hf_slice = hf_all.iloc[hf_cursor: hf_cursor + local_n].reset_index(drop=True)
+                hf_slice = hf_all_df["score"].iloc[hf_cursor: hf_cursor + local_n].reset_index(drop=True)
                 hf_cursor += local_n
 
                 result = compare_scores(local_rows, hf_slice)
@@ -292,9 +306,9 @@ def verify_benchmark(
 
                 hf_subset_suffix = subset.removeprefix(strip_prefix)
                 config = f"{model}__leaderboard_{hf_benchmark}_{hf_subset_suffix}"
-                hf_scores = load_hf_config(model, config)
+                hf_df = load_hf_config(model, config)
 
-                if hf_scores is None:
+                if hf_df is None:
                     row = {
                         "model": model, "benchmark": str(benchmark), "subset": subset,
                         "size_mismatch": True, "local_n": local_n, "hf_n": 0,
@@ -307,7 +321,7 @@ def verify_benchmark(
                     results.append(row)
                     continue
 
-                result = compare_scores(local_rows, hf_scores)
+                result = compare_scores(local_rows, hf_df["score"])
                 result.update({"model": model, "benchmark": str(benchmark), "subset": subset})
                 results.append(result)
 
