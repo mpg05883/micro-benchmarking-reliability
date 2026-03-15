@@ -47,15 +47,17 @@ def download_model_subset(owner, model, model_idx, benchmark, subset, split):
     repo_id = f"{owner}/{model}-details"
     config = f"{model}__leaderboard_{benchmark}_{subset}"
 
-    for attempt in range(MAX_RETRIES):
+    attempt = 0
+    while True:
         try:
             df = load_dataset(repo_id, config, split=split).to_pandas()
             break
         except Exception as e:
-            if "429" in str(e) and attempt < MAX_RETRIES - 1:
-                wait = INITIAL_BACKOFF * (2**attempt)
+            if "429" in str(e):
+                wait = INITIAL_BACKOFF * (2**min(attempt, 6))  # cap backoff at ~128s
                 print(f"  Rate limited on {model}/{subset}, retrying in {wait}s...")
                 time.sleep(wait)
+                attempt += 1
                 continue
             print(f"  Skipping {model}/{subset}: {e}")
             return []
@@ -78,7 +80,13 @@ def download_benchmark_scores(benchmark, subsets, models):
     meta_path = data_dir / "model_scores_metadata.json"
 
     if scores_path.exists() and meta_path.exists():
-        print(f"Skipping {benchmark} — already exists")
+        matrix = np.load(scores_path)
+        meta = json.load(open(meta_path))
+        n_instances, n_models = matrix.shape
+        print(
+            f"Skipping {benchmark} — already exists "
+            f"({n_instances} instances × {n_models} models)"
+        )
         return
 
     data_dir.mkdir(parents=True, exist_ok=True)
