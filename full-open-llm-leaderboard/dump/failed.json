@@ -1,0 +1,30 @@
+[
+    {
+        "model": "mistralai__Mixtral-8x22B-Instruct-v0.1",
+        "error": "The directory at hf://datasets/open-llm-leaderboard/mistralai__Mixtral-8x22B-Instruct-v0.1-details@c9ae85e5dc7c63fbec57ed321da1e535b1c6df28 doesn't contain any data files"
+    },
+    {
+        "model": "google__gemma-2-9b-it",
+        "error": "No (supported) data files found in open-llm-leaderboard/google__gemma-2-9b-it-details"
+    },
+    {
+        "model": "databricks__dbrx-instruct",
+        "error": "Dataset 'open-llm-leaderboard/databricks__dbrx-instruct-details' doesn't exist on the Hub or cannot be accessed."
+    },
+    {
+        "model": "Qwen__Qwen2-57B-A14B",
+        "error": "Dataset 'open-llm-leaderboard/Qwen__Qwen2-57B-A14B-details' doesn't exist on the Hub or cannot be accessed."
+    },
+    {
+        "model": "NousResearch__Hermes-3-Llama-3.1-8B",
+        "error": "Dataset 'open-llm-leaderboard/NousResearch__Hermes-3-Llama-3.1-8B-details' doesn't exist on the Hub or cannot be accessed."
+    },
+    {
+        "model": "google__gemma-2-9b",
+        "error": "No (supported) data files found in open-llm-leaderboard/google__gemma-2-9b-details"
+    },
+    {
+        "model": "CausalLM__preview-1-hf",
+        "error": "The read operation timed out"
+    }
+]
