@@ -10,7 +10,7 @@ def resolve_data_dir():
 
 
 def resolve_root_dir():
-    return Path(__file__).parent.parent.parent.parent
+    return Path(__file__).parent.parent.parent
 
 
 def resolve_leaderboard_results_dir():
