@@ -54,7 +54,7 @@ def download_model_subset(owner, model, model_idx, benchmark, subset, split):
             break
         except Exception as e:
             if "429" in str(e):
-                wait = INITIAL_BACKOFF * (2**min(attempt, 6))  # cap backoff at ~128s
+                wait = INITIAL_BACKOFF * (2 ** min(attempt, 6))  # cap backoff at ~128s
                 print(f"  Rate limited on {model}/{subset}, retrying in {wait}s...")
                 time.sleep(wait)
                 attempt += 1
