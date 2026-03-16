@@ -591,6 +591,10 @@ def download_model_scores(
 
 
 def main(args: argparse.Namespace) -> None:
+    # Redirect the huggingface_hub download cache so raw files don't
+    # accumulate in the default ~/.cache/huggingface/hub directory.
+    os.environ["HF_HUB_CACHE"] = str(PARENT_DIR / args.cache_dir / "hub")
+
     if not args.verbose:
         suppress_huggingface()
 
