@@ -604,6 +604,9 @@ def main(args: argparse.Namespace) -> None:
             continue
         if benchmark == "gpqa":
             for subset in subsets:
+                if subset in ("main", "extended"):
+                    print(f"Skipping gpqa_{subset}")
+                    continue
                 expanded.append((f"gpqa_{subset}", "gpqa", [subset]))
         else:
             dir_name = dir_name_overrides.get(benchmark, benchmark)
