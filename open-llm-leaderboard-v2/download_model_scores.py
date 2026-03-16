@@ -270,8 +270,8 @@ def _build_and_save_matrix(
 
     # Write to temp files first, then rename — prevents corruption if
     # the process is interrupted mid-write.
-    tmp_scores = scores_path.with_suffix(".npy.tmp")
-    tmp_metadata = metadata_path.with_suffix(".json.tmp")
+    tmp_scores = scores_path.parent / "model_scores_tmp.npy"
+    tmp_metadata = metadata_path.parent / "model_scores_metadata_tmp.json"
     np.save(tmp_scores, matrix)
     with open(tmp_metadata, "w") as f:
         json.dump({"doc_hashes": doc_hashes, "models": models}, f)
@@ -613,9 +613,6 @@ def main(args: argparse.Namespace) -> None:
     expanded: list[tuple[str, str, list[str]]] = []  # (dir_name, hf_benchmark, subsets)
 
     for benchmark, subsets in benchmarks.items():
-        if benchmark == "bbh":
-            continue
-        
         if not subsets:
             print(f"Skipping {benchmark} — no subsets")
             continue
