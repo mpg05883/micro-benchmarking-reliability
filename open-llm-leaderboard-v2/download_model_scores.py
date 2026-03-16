@@ -267,9 +267,16 @@ def _build_and_save_matrix(
             )
 
     scores_path.parent.mkdir(parents=True, exist_ok=True)
-    np.save(scores_path, matrix)
-    with open(metadata_path, "w") as f:
+
+    # Write to temp files first, then rename — prevents corruption if
+    # the process is interrupted mid-write.
+    tmp_scores = scores_path.with_suffix(".npy.tmp")
+    tmp_metadata = metadata_path.with_suffix(".json.tmp")
+    np.save(tmp_scores, matrix)
+    with open(tmp_metadata, "w") as f:
         json.dump({"doc_hashes": doc_hashes, "models": models}, f)
+    tmp_scores.replace(scores_path)
+    tmp_metadata.replace(metadata_path)
 
     return len(models)
 
@@ -320,7 +327,13 @@ def _load_existing_scores(
     if not scores_path.exists() or not metadata_path.exists():
         return {}, set(), set()
 
-    matrix = np.load(scores_path)
+    try:
+        matrix = np.load(scores_path)
+    except ValueError as e:
+        print(f"Warning: corrupted scores file ({e}). Starting fresh.")
+        scores_path.unlink(missing_ok=True)
+        metadata_path.unlink(missing_ok=True)
+        return {}, set(), set()
     with open(metadata_path, "r") as f:
         metadata = json.load(f)
 

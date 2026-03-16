@@ -352,8 +352,9 @@ def main(args: argparse.Namespace) -> None:
         if not subsets:
             continue
         if benchmark == "gpqa":
-            for subset in subsets:
-                expanded.append((f"gpqa_{subset}", "gpqa", [subset]))
+            continue
+            # for subset in subsets:
+            #     expanded.append((f"gpqa_{subset}", "gpqa", [subset]))
         else:
             dir_name = dir_name_overrides.get(benchmark, benchmark)
             expanded.append((dir_name, benchmark, subsets))

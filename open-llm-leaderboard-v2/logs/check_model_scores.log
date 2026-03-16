@@ -1,18 +1,18 @@
 ======================================================================
 Model Scores Verification Log
 ======================================================================
-Timestamp: 2026-03-16T00:44:56.932107
-Models per benchmark: 437
+Timestamp: 2026-03-16T02:55:01.642295
+Models per benchmark: 10
 Seed: None
-Benchmarks verified: gpqa_diamond
+Benchmarks verified: math_hard
 
 ----------------------------------------------------------------------
-Benchmark: gpqa_diamond
-  Instances checked: 58830
+Benchmark: math_hard
+  Instances checked: 13240
   Mismatches: 0
 
 ======================================================================
-TOTAL instances checked: 58830
+TOTAL instances checked: 13240
 TOTAL mismatches: 0
 Result: PASS
 ======================================================================
