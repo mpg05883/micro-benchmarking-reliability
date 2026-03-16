@@ -22,9 +22,5 @@
     {
         "model": "google__gemma-2-9b",
         "error": "No (supported) data files found in open-llm-leaderboard/google__gemma-2-9b-details"
-    },
-    {
-        "model": "CausalLM__preview-1-hf",
-        "error": "The read operation timed out"
     }
 ]
