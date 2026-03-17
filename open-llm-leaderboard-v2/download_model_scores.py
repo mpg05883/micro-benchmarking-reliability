@@ -591,9 +591,12 @@ def download_model_scores(
 
 
 def main(args: argparse.Namespace) -> None:
-    # Redirect the huggingface_hub download cache so raw files don't
-    # accumulate in the default ~/.cache/huggingface/hub directory.
+    # Redirect all Hugging Face caches so raw files don't accumulate
+    # in the default ~/.cache/huggingface directory.
+    cache_root = str(PARENT_DIR / args.cache_dir)
+    os.environ["HF_HOME"] = cache_root
     os.environ["HF_HUB_CACHE"] = str(PARENT_DIR / args.cache_dir / "hub")
+    os.environ["HF_DATASETS_CACHE"] = str(PARENT_DIR / args.cache_dir / "datasets")
 
     if not args.verbose:
         suppress_huggingface()
@@ -604,27 +607,13 @@ def main(args: argparse.Namespace) -> None:
     with open(PARENT_DIR / args.configs_dir / args.models_file, "r") as f:
         models = json.load(f)
 
-    # Expand benchmarks so each gets its own directory and scores matrix.
-    # GPQA subsets are split into separate entries (gpqa_diamond, gpqa_extended,
-    # gpqa_main) since each has its own dataset parquet. Other benchmarks with
-    # directory names that differ from their HF config name (e.g. math → math_hard)
-    # are also remapped here.
-    dir_name_overrides = {"math": "math_hard", "mmlu": "mmlu_pro"}
-    expanded: list[tuple[str, str, list[str]]] = []  # (dir_name, hf_benchmark, subsets)
+    # Only process mmlu_pro
+    mmlu_subsets = benchmarks.get("mmlu", [])
+    if not mmlu_subsets:
+        print("No mmlu subsets found in benchmarks config")
+        return
 
-    for benchmark, subsets in benchmarks.items():
-        if not subsets:
-            print(f"Skipping {benchmark} — no subsets")
-            continue
-        if benchmark == "gpqa":
-            for subset in subsets:
-                if subset in ("main", "extended"):
-                    print(f"Skipping gpqa_{subset}")
-                    continue
-                expanded.append((f"gpqa_{subset}", "gpqa", [subset]))
-        else:
-            dir_name = dir_name_overrides.get(benchmark, benchmark)
-            expanded.append((dir_name, benchmark, subsets))
+    expanded = [("mmlu_pro", "mmlu", mmlu_subsets)]
 
     for dir_name, hf_benchmark, subsets in expanded:
         download_model_scores(

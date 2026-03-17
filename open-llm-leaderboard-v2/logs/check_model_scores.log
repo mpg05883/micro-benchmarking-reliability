@@ -1,18 +1,28 @@
 ======================================================================
 Model Scores Verification Log
 ======================================================================
-Timestamp: 2026-03-16T02:55:01.642295
-Models per benchmark: 10
+Timestamp: 2026-03-16T22:15:22.932547
+Models per benchmark: 34
 Seed: None
-Benchmarks verified: math_hard
+Benchmarks verified: bbh, math_hard, mmlu_pro
+
+----------------------------------------------------------------------
+Benchmark: bbh
+  Instances checked: 195805
+  Mismatches: 0
 
 ----------------------------------------------------------------------
 Benchmark: math_hard
-  Instances checked: 13240
+  Instances checked: 44823
+  Mismatches: 0
+
+----------------------------------------------------------------------
+Benchmark: mmlu_pro
+  Instances checked: 408375
   Mismatches: 0
 
 ======================================================================
-TOTAL instances checked: 13240
+TOTAL instances checked: 649003
 TOTAL mismatches: 0
 Result: PASS
 ======================================================================

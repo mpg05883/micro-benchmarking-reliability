@@ -186,21 +186,29 @@ def verify_benchmark(
 
         for subset in subsets:
             hf_scores = load_hf_scores(
-                model, hf_benchmark, subset, cache_dir,
-                owner, split, initial_backoff, max_retries,
+                model,
+                hf_benchmark,
+                subset,
+                cache_dir,
+                owner,
+                split,
+                initial_backoff,
+                max_retries,
             )
             downloads_since_clear += 1
 
             if not hf_scores:
-                result.mismatches.append(Mismatch(
-                    benchmark=benchmark,
-                    subset=subset,
-                    model=model,
-                    doc_hash="N/A",
-                    local_score="N/A",
-                    hf_score="N/A",
-                    issue="Download failed or no data on HuggingFace",
-                ))
+                result.mismatches.append(
+                    Mismatch(
+                        benchmark=benchmark,
+                        subset=subset,
+                        model=model,
+                        doc_hash="N/A",
+                        local_score="N/A",
+                        hf_score="N/A",
+                        issue="Download failed or no data on HuggingFace",
+                    )
+                )
                 continue
 
             for doc_hash, hf_score in hf_scores.items():
@@ -215,15 +223,17 @@ def verify_benchmark(
 
                 issue = _compare_scores(local_score, hf_score)
                 if issue is not None:
-                    result.mismatches.append(Mismatch(
-                        benchmark=benchmark,
-                        subset=subset,
-                        model=model,
-                        doc_hash=doc_hash,
-                        local_score=local_score,
-                        hf_score=hf_score,
-                        issue=issue,
-                    ))
+                    result.mismatches.append(
+                        Mismatch(
+                            benchmark=benchmark,
+                            subset=subset,
+                            model=model,
+                            doc_hash=doc_hash,
+                            local_score=local_score,
+                            hf_score=hf_score,
+                            issue=issue,
+                        )
+                    )
 
             # Periodically clear cache to free disk space
             if downloads_since_clear >= cache_clear_interval:
@@ -264,9 +274,7 @@ def write_log(
                 f.write("\n  Details:\n")
                 for m in result.mismatches:
                     doc_hash_str = (
-                        m.doc_hash[:16] + "..."
-                        if len(m.doc_hash) > 16
-                        else m.doc_hash
+                        m.doc_hash[:16] + "..." if len(m.doc_hash) > 16 else m.doc_hash
                     )
                     f.write(
                         f"    [{m.subset}] {m.model} | "
@@ -361,9 +369,32 @@ def main(args: argparse.Namespace) -> None:
 
     data_dir = PARENT_DIR / args.data_dir
     dir_names = [dir_name for dir_name, _, _ in expanded]
-    k = None if args.all else args.k
+    if args.all:
+        k = None
+    elif args.k is not None:
+        k = args.k
+    else:
+        # Compute k from percentage — need total model count first
+        models_per_benchmark: list[set[str]] = []
+        for dir_name in dir_names:
+            metadata_path = data_dir / dir_name / args.metadata_file_name
+            if metadata_path.exists():
+                with open(metadata_path, "r") as f:
+                    metadata = json.load(f)
+                models_per_benchmark.append(set(metadata["models"]))
+        if models_per_benchmark:
+            total = len(sorted(set.intersection(*models_per_benchmark)))
+            k = max(1, round(total * args.percent / 100))
+            print(f"Checking {args.percent}% of models ({k} of {total})")
+        else:
+            k = 1
+
     selected_models = _select_models(
-        dir_names, data_dir, args.metadata_file_name, k, args.seed,
+        dir_names,
+        data_dir,
+        args.metadata_file_name,
+        k,
+        args.seed,
     )
     if not selected_models:
         print("No models to verify.")
@@ -422,8 +453,12 @@ def main(args: argparse.Namespace) -> None:
     log_path = PARENT_DIR / "logs" / "check_model_scores.log"
     num_models = len(selected_models)
     write_log(
-        log_path, num_models, args.seed,
-        benchmark_results, total_checked, total_mismatches,
+        log_path,
+        num_models,
+        args.seed,
+        benchmark_results,
+        total_checked,
+        total_mismatches,
     )
     print(f"\nLog written to {log_path}")
     print(f"\nTotal instances checked: {total_checked}")
@@ -436,24 +471,40 @@ if __name__ == "__main__":
         description="Verify local model scores against HuggingFace"
     )
     parser.add_argument(
-        "--k", type=int, default=5,
-        help="Number of random models to verify per benchmark (default: 5)",
+        "--k",
+        type=int,
+        default=None,
+        help="Exact number of random models to verify (overrides --percent)",
     )
     parser.add_argument(
-        "--all", action="store_true",
-        help="Verify all models instead of a random sample of k",
+        "--percent",
+        type=float,
+        default=10,
+        help="Percentage of models to verify (default: 10). Ignored if --k or --all is set.",
     )
     parser.add_argument(
-        "--seed", type=int, default=None,
+        "--all",
+        action="store_true",
+        help="Verify all models instead of a random sample",
+    )
+    parser.add_argument(
+        "--seed",
+        type=int,
+        default=None,
         help="Random seed for reproducibility",
     )
     parser.add_argument("--verbose", "-v", action="store_true")
-    parser.add_argument("--cache_clear_interval", type=int, default=50,
+    parser.add_argument(
+        "--cache_clear_interval",
+        type=int,
+        default=50,
         help="Clear cache every N downloads (default: 50)",
     )
     parser.add_argument("--configs_dir", type=str, default="configs")
     parser.add_argument("--benchmarks_file", type=str, default="benchmarks.json")
-    parser.add_argument("--metadata_file_name", type=str, default="model_scores_metadata.json")
+    parser.add_argument(
+        "--metadata_file_name", type=str, default="model_scores_metadata.json"
+    )
     parser.add_argument("--scores_file_name", type=str, default="model_scores.npy")
     parser.add_argument("--data_dir", type=str, default="data")
     parser.add_argument("--cache_dir", type=str, default="cache")
