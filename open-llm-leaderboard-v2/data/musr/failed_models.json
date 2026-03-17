@@ -1,0 +1,12 @@
+[
+  "HuggingFaceTB/SmolLM2-360M",
+  "google/codegemma-1.1-2b",
+  "google/gemma-2-2b-it",
+  "ibm-granite/granite-3.0-3b-a800m-base",
+  "ibm-granite/granite-3.1-2b-instruct",
+  "microsoft/Phi-3-small-128k-instruct",
+  "microsoft/Phi-3-small-8k-instruct",
+  "speakleash/Bielik-11B-v2.1-Instruct",
+  "speakleash/Bielik-11B-v2.2-Instruct",
+  "teknium/OpenHermes-7B"
+]

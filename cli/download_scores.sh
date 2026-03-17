@@ -1,3 +1,5 @@
+#!/bin/bash
+
 source ./cli/utils.sh
 activate_conda_env
 

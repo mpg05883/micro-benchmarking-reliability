@@ -23,6 +23,12 @@ class Score:
     score: float
 
 
+@dataclass
+class DownloadResult:
+    scores: list[Score]
+    failed: bool
+
+
 def suppress_huggingface() -> None:
     """Suppress Hugging Face warnings and progress bars."""
     warnings.filterwarnings(
@@ -56,7 +62,7 @@ def download_model_subset(
     owner: str = "open-llm-leaderboard",
     initial_backoff: int = 2,
     max_retries: int = 5,
-) -> list[Score]:
+) -> DownloadResult:
     """Download scores for a single model/subset combination."""
     # HuggingFace detail repos use "__" instead of "/" in model names
     hf_model = model.replace("/", "__")
@@ -89,7 +95,7 @@ def download_model_subset(
             ]
             if any(msg in error_str for msg in non_transient_errors):
                 print(f"  Skipping {model}/{subset} (no data)")
-                return []
+                return DownloadResult(scores=[], failed=True)
 
             is_rate_limited = "429" in error_str
             is_retryable = attempt < max_retries
@@ -105,13 +111,13 @@ def download_model_subset(
                 attempt += 1
                 continue
             print(f"  Skipping {model}/{subset} after {attempt} retries: {e}")
-            return []
+            return DownloadResult(scores=[], failed=True)
 
     correctness_columns = ["acc", "acc_norm", "exact_match"]
     column = next((c for c in correctness_columns if c in df.columns), None)
     if column is None:
         print(f"  No correctness column in {model}/{subset}: {list(df.columns)}")
-        return []
+        return DownloadResult(scores=[], failed=True)
 
     # Each element contains the score for a single model/instance combination
     scores = [
@@ -123,7 +129,7 @@ def download_model_subset(
         for _, row in df[["doc_hash", column]].iterrows()
     ]
 
-    return scores
+    return DownloadResult(scores=scores, failed=False)
 
 
 def _load_dataset_parquet(
@@ -534,6 +540,7 @@ def download_model_scores(
         total_remaining = len(futures)
         completed_since_save = 0
         completed_since_clear = 0
+        failed_models: set[str] = set()
 
         kwargs = {
             "desc": f"Downloading {benchmark} model scores",
@@ -544,16 +551,20 @@ def download_model_scores(
         with tqdm(**kwargs) as pbar:
             for future in as_completed(futures):
                 model_idx, model, subset = futures[future]
+                download_result = future.result()
 
-                for result in future.result():
+                if download_result.failed:
+                    failed_models.add(model)
+
+                for score in download_result.scores:
                     # Skip doc_hashes not in the current dataset parquet
                     if (
                         valid_doc_hashes is not None
-                        and result.doc_hash not in valid_doc_hashes
+                        and score.doc_hash not in valid_doc_hashes
                     ):
                         continue
-                    scores = instance_scores.setdefault(result.doc_hash, {})
-                    scores[result.model_idx] = result.score
+                    scores = instance_scores.setdefault(score.doc_hash, {})
+                    scores[score.model_idx] = score.score
 
                 completed_tasks.add((model_idx, subset))
                 completed_since_save += 1
@@ -581,6 +592,18 @@ def download_model_scores(
     # Remove progress file to indicate download is complete
     progress_path.unlink(missing_ok=True)
 
+    # Save list of models that had at least one failed download
+    failed_models_path = benchmark_dir / "failed_models.json"
+    failed_models_sorted = sorted(failed_models)
+    with open(failed_models_path, "w") as f:
+        json.dump(failed_models_sorted, f, indent=2)
+
+    if failed_models:
+        print(
+            f"{len(failed_models)} models had download failures "
+            f"(saved to {failed_models_path})"
+        )
+
     print(
         f"Saved {len(instance_scores)} instances × {num_models_saved} models "
         f"to {scores_path} and {metadata_path}"
@@ -607,13 +630,24 @@ def main(args: argparse.Namespace) -> None:
     with open(PARENT_DIR / args.configs_dir / args.models_file, "r") as f:
         models = json.load(f)
 
-    # Only process mmlu_pro
-    mmlu_subsets = benchmarks.get("mmlu", [])
-    if not mmlu_subsets:
-        print("No mmlu subsets found in benchmarks config")
-        return
+    # Expand benchmarks so each directory has its own entry.
+    # GPQA subsets become separate entries (gpqa_diamond, gpqa_extended, etc.).
+    # Other benchmarks with directory names differing from their HF config name
+    # (e.g. math → math_hard, mmlu → mmlu_pro) are remapped.
+    dir_name_overrides = {"math": "math_hard", "mmlu": "mmlu_pro"}
+    excluded_gpqa_subsets = {"main", "diamond"}
+    expanded: list[tuple[str, str, list[str]]] = []  # (dir_name, hf_benchmark, subsets)
 
-    expanded = [("mmlu_pro", "mmlu", mmlu_subsets)]
+    for benchmark, subsets in benchmarks.items():
+        if not subsets:
+            continue
+        if benchmark == "gpqa":
+            for subset in subsets:
+                if subset not in excluded_gpqa_subsets:
+                    expanded.append((f"gpqa_{subset}", "gpqa", [subset]))
+        else:
+            dir_name = dir_name_overrides.get(benchmark, benchmark)
+            expanded.append((dir_name, benchmark, subsets))
 
     for dir_name, hf_benchmark, subsets in expanded:
         download_model_scores(
